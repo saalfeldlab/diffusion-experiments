@@ -1,0 +1,26 @@
+experiment_name: diffusion_label_generation
+image_size: 96
+diffusion:
+  timesteps: 1000
+  sampling_timesteps: 250
+  loss_type: l1
+  auto_normalize: False
+architecture:
+  dim: 64
+  channels: 22
+  dim_mults: [1,2,4,8]
+training:
+  train_batch_size: 64
+  train_lr: 8e-5
+  train_num_steps: 700000
+  gradient_accumulate_every: 3
+  ema_decay: 0.995
+  amp: False
+  calculate_fid: False
+data:
+  data_dir: /nrs/saalfeld/heinrichl/data/cellmap_labels/membrane_hierarchy_train/
+  data_type: zarr
+tracking:
+  experiment_name: simple_multiclass_2d_label_generation
+  tracking_uri: file:///nrs/saalfeld/heinrichl/mlflow_tracking/diffusion
+  run_name: simple_multiclass_2d
