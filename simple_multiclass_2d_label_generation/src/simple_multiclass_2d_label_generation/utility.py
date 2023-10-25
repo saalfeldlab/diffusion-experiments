@@ -29,7 +29,8 @@ def start_ui():
     command = ["mlflow", "ui", "--backend-store-uri", config.tracking.tracking_uri]
     subprocess.run(command)
 
-def get_commit_hash():
-    repo = git.cmd.Git()
+def get_commit_hash_cwd():
+    repo = git.Repo(search_parent_directories=True)
     commit_hash = repo.head.commit.hexsha
+    return commit_hash
 

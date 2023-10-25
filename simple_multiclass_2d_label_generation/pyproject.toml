@@ -9,6 +9,7 @@ dependencies = [
   "mlflow",
   "pydantic",
   "GitPython",
+  "numpy",
 ]
 
 name = "simple_multiclass_2d_label_generation"

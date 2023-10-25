@@ -128,3 +128,4 @@ variables:
   HATCH_ENV_ACTIVE: default
 prefix: 
   /home/heinrichl@hhmi.org/brew/mambaforge/envs/simple-multiclass-2d-label-generation_default_3.10
+
