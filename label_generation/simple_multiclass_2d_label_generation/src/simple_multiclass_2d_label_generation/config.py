@@ -75,15 +75,3 @@ class ExperimentConfig(BaseModel):
     )
     training: TrainingConfig
     tracking: TrackingConfig
-
-    def flat_dict(self, separator="."):
-        flat = self.model_dump()
-        remove_keys = []
-        for k, v in flat.items():
-            if isinstance(v, Dict):
-                for kk, vv in v:
-                    flat[f"{k}.{kk}"] = vv
-            remove_keys.append(k)
-        for k in remove_keys:
-            flat.pop(k)
-        return flat

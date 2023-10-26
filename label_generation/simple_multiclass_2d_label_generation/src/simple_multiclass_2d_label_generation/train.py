@@ -9,8 +9,7 @@ from simple_multiclass_2d_label_generation.config import (
     ExperimentConfig,
     TrackingConfig,
 )
-from simple_multiclass_2d_label_generation.utility import flatten_dict
-
+from simple_multiclass_2d_label_generation.utility import flatten_dict, get_repo_and_commit_cwd
 
 def track(config: TrackingConfig):
     parsed_uri = urlparse(config.tracking_uri)
@@ -34,6 +33,9 @@ def run():
 
     run_id = track(config.tracking)
     with mlflow.start_run(run_id=run_id):
+        repo, commit_hash = get_repo_and_commit_cwd()
+        mlflow.log_param("repo", repo)
+        mlflow.log_param("commit", commit_hash)
 
         mlflow.log_params(flatten_dict(config.model_dump()))
         mlflow.pytorch.autolog()
