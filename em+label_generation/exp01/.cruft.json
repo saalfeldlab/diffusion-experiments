@@ -1,0 +1,32 @@
+{
+  "template": "git@github.com:neptunes5thmoon/cookiecrumbles.git",
+  "commit": "d18a42280ca0ffa350e1a73243cd9d25e0395233",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "em+label_generation",
+      "experiment_name": "exp01",
+      "project_slug": "exp01",
+      "author": "Larissa Heinrich",
+      "author_email": "heinrichl@janelia.hhmi.org",
+      "parent_repo": "https://github.com/saalfeldlab/diffusion-experiments",
+      "experiment_description": "A diffusion network to generate EM and corresponding labels. List of labels is the simple, mutually exlusive list.",
+      "my_repo_deps": {
+        "repo": [
+          "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git",
+          "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git"
+        ],
+        "branch": [
+          "mymain",
+          "main"
+        ],
+        "use_latest_commit": [
+          true,
+          true
+        ]
+      },
+      "_template": "git@github.com:neptunes5thmoon/cookiecrumbles.git"
+    }
+  },
+  "directory": "diffusion-experiments"
+}
