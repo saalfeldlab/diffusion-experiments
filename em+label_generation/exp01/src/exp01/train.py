@@ -11,6 +11,7 @@ from exp01.config import (
 )
 from exp01.utility import flatten_dict, get_repo_and_commit_cwd
 
+
 def track(config: TrackingConfig):
     parsed_uri = urlparse(config.tracking_uri)
     if parsed_uri.scheme == "file":
@@ -38,9 +39,7 @@ def run():
         mlflow.log_param("commit", commit_hash)
         mlflow.log_params(flatten_dict(config.dict()))
         mlflow.pytorch.autolog()
-        architecture = config.architecture.get_constructor()(
-            **config.architecture.dict()
-        )
+        architecture = config.architecture.get_constructor()(**config.architecture.dict())
 
         diffusion = config.diffusion.get_constructor()(
             architecture, image_size=config.image_size, **config.diffusion.dict()
@@ -52,7 +51,7 @@ def run():
         crop_list = []
         for ds in dataset:
             crop_list.extend([c.crop_name for c in ds.crops])
-            
+
         mlflow.log_param("crop_list", crop_list)
         parsed_artifact_uri = urlparse(mlflow.get_artifact_uri())
         if parsed_artifact_uri.scheme != "file":
