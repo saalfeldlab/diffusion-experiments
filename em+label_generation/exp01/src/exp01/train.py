@@ -36,15 +36,14 @@ def run():
         repo, commit_hash = get_repo_and_commit_cwd()
         mlflow.log_param("repo", repo)
         mlflow.log_param("commit", commit_hash)
-
-        mlflow.log_params(flatten_dict(config.model_dump()))
+        mlflow.log_params(flatten_dict(config.dict()))
         mlflow.pytorch.autolog()
         architecture = config.architecture.get_constructor()(
-            **config.architecture.model_dump()
+            **config.architecture.dict()
         )
 
         diffusion = config.diffusion.get_constructor()(
-            architecture, image_size=config.image_size, **config.diffusion.model_dump()
+            architecture, image_size=config.image_size, **config.diffusion.dict()
         )
         data_args = config.data
         del data_args["data_type"]
@@ -64,7 +63,7 @@ def run():
             diffusion,
             dataset,
             results_folder=parsed_artifact_uri.path,
-            **config.training.model_dump(),
+            **config.training.dict(),
         )
         trainer.train()
 
