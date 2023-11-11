@@ -25,19 +25,20 @@ dependencies:
   - xz=5.2.6=h166bdaf_0
   - pip:
       - accelerate==0.24.1
-      - aiobotocore==2.7.0
+      - aiobotocore==2.0.1
       - aiohttp==3.8.6
       - aioitertools==0.11.0
       - aiosignal==1.3.1
       - alembic==1.12.1
+      - annotated-types==0.6.0
       - asciitree==0.3.3
       - async-timeout==4.0.3
       - attrs==23.1.0
       - backoff==1.11.1
       - beartype==0.16.4
       - blinker==1.7.0
-      - botocore==1.31.64
-      - cellmap-schemas==0.1.3
+      - botocore==1.22.8
+      - cellmap-schemas==0.1.4
       - certifi==2023.7.22
       - charset-normalizer==3.3.2
       - click==8.1.7
@@ -45,10 +46,11 @@ dependencies:
       - contourpy==1.2.0
       - coverage==7.3.2
       - cycler==0.12.1
-      - dask==2023.10.1
+      - dacite==1.8.1
+      - dask==2021.12.0
       - databricks-cli==0.18.0
       - denoising-diffusion-pytorch==1.8.15
-      - distributed==2023.10.1
+      - distributed==2021.12.0
       - docker==6.1.3
       - einops==0.7.0
       - ema-pytorch==0.3.0
@@ -56,29 +58,28 @@ dependencies:
       - exceptiongroup==1.1.3
       - exp01==0.0.1
       - fasteners==0.19
-      - fibsem-tools==6.3.0
+      - fibsem-tools==0.2.0
       - filelock==3.13.1
       - flask==3.0.0
       - fonttools==4.44.0
       - frozenlist==1.4.0
-      - fsspec==2023.10.0
+      - fsspec==2021.11.1
       - ghp-import==2.1.0
       - gitdb==4.0.11
       - gitpython==3.1.40
       - greenlet==3.0.1
       - gunicorn==21.2.0
       - h5py==3.10.0
-      - huggingface-hub==0.19.0
+      - huggingface-hub==0.17.3
       - idna==3.4
       - importlib-metadata==4.13.0
       - inflection==0.5.1
       - iniconfig==2.0.0
       - itsdangerous==2.1.2
       - jinja2==3.1.2
-      - jmespath==1.0.1
+      - jmespath==0.10.0
       - joblib==1.3.2
       - kiwisolver==1.4.5
-      - labelcomposer==0.0.1
       - linkify-it-py==2.0.2
       - locket==1.0.0
       - mako==1.3.0
@@ -91,6 +92,7 @@ dependencies:
       - mergedeep==1.3.4
       - mkdocs==1.5.3
       - mkdocs-exclude==1.0.2
+      - ml-dtypes==0.3.1
       - mlflow==2.8.0
       - mpmath==1.3.0
       - mrcfile==1.4.3
@@ -113,7 +115,7 @@ dependencies:
       - nvidia-nvtx-cu12==12.1.105
       - oauthlib==3.2.2
       - packaging==23.2
-      - pandas==2.1.3
+      - pandas==1.5.3
       - partd==1.4.1
       - pathspec==0.11.2
       - pillow==10.1.0
@@ -124,7 +126,8 @@ dependencies:
       - psutil==5.9.6
       - pyairtable==2.1.0.post1
       - pyarrow==13.0.0
-      - pydantic==1.10.13
+      - pydantic==2.4.2
+      - pydantic-core==2.10.1
       - pydantic-ome-ngff==0.3.0
       - pydantic-zarr==0.5.1
       - pygments==2.16.1
@@ -140,7 +143,7 @@ dependencies:
       - querystring-parser==1.2.4
       - requests==2.31.0
       - rich==13.6.0
-      - s3fs==2023.10.0
+      - s3fs==2021.11.1
       - scikit-learn==1.3.2
       - scipy==1.11.3
       - six==1.16.0
@@ -151,6 +154,7 @@ dependencies:
       - sympy==1.12
       - tabulate==0.9.0
       - tblib==3.0.0
+      - tensorstore==0.1.48
       - textual==0.16.0
       - threadpoolctl==3.2.0
       - tifffile==2023.9.26
@@ -161,11 +165,10 @@ dependencies:
       - tornado==6.3.3
       - tqdm==4.66.1
       - triton==2.1.0
-      - typeguard==4.1.5
       - typing-extensions==4.8.0
       - tzdata==2023.3
       - uc-micro-py==1.0.2
-      - urllib3==2.0.7
+      - urllib3==1.26.18
       - watchdog==3.0.0
       - websocket-client==1.6.4
       - werkzeug==3.0.1
@@ -175,7 +178,7 @@ dependencies:
       - xarray-multiscale==2.1.0
       - xarray-ome-ngff==1.2.3
       - yarl==1.9.2
-      - zarr==2.16.1
+      - zarr==2.7.0
       - zict==3.0.0
       - zipp==3.17.0
 variables:

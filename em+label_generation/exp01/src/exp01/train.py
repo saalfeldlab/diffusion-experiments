@@ -47,6 +47,7 @@ def run():
             architecture, image_size=config.image_size, **config.diffusion.model_dump()
         )
         data_args = config.data
+        del data_args["data_type"]
         data_args["image_size"] = config.image_size
         dataset = config.data.get_constructor()(**data_args)
         crop_list = []
