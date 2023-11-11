@@ -49,7 +49,7 @@ def run():
         data_args["image_size"] = config.image_size
         dataset = config.data.get_constructor()(**data_args)
         crop_list = []
-        for ds in dataset:
+        for ds in dataset.datasets:
             crop_list.extend([c.crop_name for c in ds.crops])
 
         mlflow.log_param("crop_list", crop_list)
