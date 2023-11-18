@@ -12,7 +12,7 @@ from exp02.config import (
 from exp02.utility import flatten_dict, get_repo_and_commit_cwd
 import warnings
 
-warnings.filterwarnings("ignore", message="The name field was set to `None`. Version 0.4 of the OME-NGFF spec states that the `name` field of a Multiscales object should not be*")
+warnings.filterwarnings("ignore", module="pydantic_ome_ngff") # line104
 def track(config: TrackingConfig):
     parsed_uri = urlparse(config.tracking_uri)
     if parsed_uri.scheme == "file":
