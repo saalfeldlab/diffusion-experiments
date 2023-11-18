@@ -60,6 +60,7 @@ class CellMapDataset3Das2DConfig(BaseModel):
     scale: Dict[Literal["x", "y", "z"], int]
     augment_horizontal_flip: bool = True
     augment_vertical_flip: bool = True
+    allow_single_class_crops: Union[None, Sequence[str,None]] = None
     annotation_path: Optional[str] = None
     crop_list: Optional[Sequence[str]] = None
     raw_dataset: Optional[str] - None
@@ -74,6 +75,7 @@ class CellMapDatasets3Das2DConfig(BaseModel):
     augment_horizontal_flip: bool = True
     augment_vertical_flip: bool = True
     annotation_paths: Union[None, Sequence[Union[str, None]]] = None
+    allow_single_class_crops: Union[None, Sequence[str,None]] = None
     crop_lists: Union[None, Sequence[Union[None, Sequence[str]]]] = None
     raw_datasets: Union[None, Sequence[str]] = None
 
