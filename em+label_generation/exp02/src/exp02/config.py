@@ -63,7 +63,7 @@ class CellMapDataset3Das2DConfig(BaseModel):
     allow_single_class_crops: Union[None, Sequence[Union[str,None]]] = None
     annotation_path: Optional[str] = None
     crop_list: Optional[Sequence[str]] = None
-    raw_dataset: Optional[str] - None
+    raw_dataset: Optional[str] = None
     def get_constructor(self):
         return CellMapDataset3Das2D
 
