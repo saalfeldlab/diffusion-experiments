@@ -14,6 +14,7 @@ class GaussianDiffusionConfig(BaseModel):
     offset_noise_strength: float = 0.0
     min_snr_loss_weight: bool = False
     min_snr_gamma: float = 5.0
+    channel_weights: Union[None, Sequence[float]] = None
 
     def get_constructor(self):
         return GaussianDiffusion
