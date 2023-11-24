@@ -11,7 +11,7 @@ dependencies:
   - libgcc-ng=13.2.0=h807b86a_3
   - libgomp=13.2.0=h807b86a_3
   - libnsl=2.0.1=hd590300_0
-  - libsqlite=3.44.0=h2797004_0
+  - libsqlite=3.44.1=h2797004_0
   - libuuid=2.38.1=h0b41bf4_0
   - libzlib=1.2.13=hd590300_5
   - ncurses=6.4=h59595ed_2
@@ -59,7 +59,7 @@ dependencies:
       - fibsem-tools==6.3.0
       - filelock==3.13.1
       - flask==3.0.0
-      - fonttools==4.45.0
+      - fonttools==4.45.1
       - frozenlist==1.4.0
       - fsspec==2023.10.0
       - ghp-import==2.1.0
@@ -127,7 +127,7 @@ dependencies:
       - pydantic==1.10.13
       - pydantic-ome-ngff==0.3.0
       - pydantic-zarr==0.5.1
-      - pygments==2.17.1
+      - pygments==2.17.2
       - pyjwt==2.8.0
       - pyparsing==3.1.1
       - pytest==7.4.3
