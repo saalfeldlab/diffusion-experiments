@@ -1,6 +1,6 @@
 {
   "template": "git@github.com:neptunes5thmoon/cookiecrumbles.git",
-  "commit": "7e8aa4e7f99a9291c99eb6ebb6f0eb5f47fa0f41",
+  "commit": "6f686b522a7817b71754ed765d5c9954b6dafc39",
   "checkout": null,
   "context": {
     "cookiecutter": {

@@ -1,0 +1,9 @@
+diff a/em+label_generation/exp02/experiment_config.yaml b/em+label_generation/exp02/experiment_config.yaml	(rejected hunks)
+@@ -2,7 +2,6 @@ image_size: 96
+ diffusion:
+   timesteps: 1000
+   sampling_timesteps: 250
+-  loss_type: l1
+   auto_normalize: False
+   channel_weichannelghts: [
+             1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,31

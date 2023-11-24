@@ -11,7 +11,7 @@ dependencies:
   - libgcc-ng=13.2.0=h807b86a_3
   - libgomp=13.2.0=h807b86a_3
   - libnsl=2.0.1=hd590300_0
-  - libsqlite=3.44.0=h2797004_0
+  - libsqlite=3.44.1=h2797004_0
   - libuuid=2.38.1=h0b41bf4_0
   - libzlib=1.2.13=hd590300_5
   - ncurses=6.4=h59595ed_2
@@ -27,7 +27,7 @@ dependencies:
   - pip:
       - black==23.11.0
       - click==8.1.7
-      - mypy==1.7.0
+      - mypy==1.7.1
       - mypy-extensions==1.0.0
       - packaging==23.2
       - pathspec==0.11.2
