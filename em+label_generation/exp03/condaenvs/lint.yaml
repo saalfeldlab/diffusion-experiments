@@ -1,4 +1,4 @@
-name: exp02_lint_3.10
+name: exp03_lint_3.10
 channels:
   - conda-forge
 dependencies:
@@ -37,5 +37,5 @@ dependencies:
       - typing-extensions==4.8.0
 variables:
   HATCH_ENV_ACTIVE: lint
-prefix: /home/heinrichl@hhmi.org/brew/mambaforge/envs/exp02_lint_3.10
+prefix: /home/heinrichl@hhmi.org/brew/mambaforge/envs/exp03_lint_3.10
 

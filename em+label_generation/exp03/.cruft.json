@@ -1,0 +1,32 @@
+{
+  "template": "git@github.com:neptunes5thmoon/cookiecrumbles.git",
+  "commit": "d88439782588e857ea48e43449327e1024e85aed",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "em+label_generation",
+      "experiment_name": "exp03",
+      "project_slug": "exp03",
+      "author": "Larissa Heinrich",
+      "author_email": "heinrichl@janelia.hhmi.org",
+      "parent_repo": "https://github.com/saalfeldlab/diffusion-experiments",
+      "experiment_description": "Lower loss weight for raw data",
+      "my_repo_deps": {
+        "repo": [
+          "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git",
+          "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git"
+        ],
+        "branch": [
+          "mymain",
+          "main"
+        ],
+        "use_latest_commit": [
+          true,
+          true
+        ]
+      },
+      "_template": "git@github.com:neptunes5thmoon/cookiecrumbles.git"
+    }
+  },
+  "directory": "diffusion-experiments"
+}

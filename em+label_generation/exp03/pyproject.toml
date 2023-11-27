@@ -1,0 +1,152 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+dependencies = [
+  "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git@750ef5fd08902c108615f89eb0e996024ff96edd",
+  "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git@e8c016f504c8324962830a32aa919af15e1c1209",
+  "mlflow",
+  "pydantic",
+  "GitPython"
+]
+name = "exp03"
+dynamic = ["version"]
+description = 'Lower loss weight for raw data'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Larissa Heinrich", email = "heinrichl@janelia.hhmi.org" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+[project.scripts]
+train = "exp03.train:run"
+mlflowui = "exp03.utility:start_ui"
+
+[project.urls]
+Documentation = "https://github.com/saalfeldlab/diffusion-experiments/exp03/#readme"
+Issues = "https://github.com/saalfeldlab/diffusion-experiments/issues"
+Source = "https://github.com/saalfeldlab/diffusion-experiments/exp03"
+
+[tool.hatch.version]
+path = "src/exp03/__about__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.envs.default]
+dependencies = ["coverage[toml]>=6.5", "pytest"]
+type = "conda"
+command = "mamba"
+conda-forge = true
+
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+test-cov = "coverage run -m pytest {args:tests}"
+cov-report = ["- coverage combine", "coverage report"]
+cov = ["test-cov", "cov-report"]
+
+[[tool.hatch.envs.all.matrix]]
+python = ["3.7", "3.8", "3.9", "3.10", "3.11"]
+
+[tool.hatch.envs.lint]
+type = "conda"
+command = "mamba"
+conda-forge = true
+detached = true
+dependencies = ["black>=23.1.0", "mypy>=1.0.0", "ruff>=0.0.243"]
+
+[tool.hatch.envs.lint.scripts]
+typing = "mypy --install-types --non-interactive {args:src/exp03 tests}"
+style = ["ruff {args:.}", "black --check --diff {args:.}"]
+fmt = ["black {args:.}", "ruff --fix {args:.}", "style"]
+all = ["style", "typing"]
+
+[tool.black]
+target-version = ["py37"]
+line-length = 120
+skip-string-normalization = true
+
+[tool.ruff]
+target-version = "py37"
+line-length = 120
+select = [
+  "A",
+  "ARG",
+  "B",
+  "C",
+  "DTZ",
+  "E",
+  "EM",
+  "F",
+  "FBT",
+  "I",
+  "ICN",
+  "ISC",
+  "N",
+  "PLC",
+  "PLE",
+  "PLR",
+  "PLW",
+  "Q",
+  "RUF",
+  "S",
+  "T",
+  "TID",
+  "UP",
+  "W",
+  "YTT",
+]
+ignore = [
+  # Allow non-abstract empty methods in abstract base classes
+  "B027",
+  # Allow boolean positional values in function calls, like `dict.get(... True)`
+  "FBT003",
+  # Ignore checks for possible passwords
+  "S105",
+  "S106",
+  "S107",
+  # Ignore complexity
+  "C901",
+  "PLR0911",
+  "PLR0912",
+  "PLR0913",
+  "PLR0915",
+]
+unfixable = [
+  # Don't touch unused imports
+  "F401",
+]
+
+[tool.ruff.isort]
+known-first-party = ["exp03"]
+
+[tool.ruff.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.per-file-ignores]
+# Tests can use magic values, assertions, and relative imports
+"tests/**/*" = ["PLR2004", "S101", "TID252"]
+
+[tool.coverage.run]
+source_pkgs = ["exp03", "tests"]
+branch = true
+parallel = true
+omit = ["src/exp03/__about__.py"]
+
+[tool.coverage.paths]
+exp03 = ["src/exp03", "*/exp03/src/exp03"]
+tests = ["tests", "*/exp03/tests"]
+
+[tool.coverage.report]
+exclude_lines = ["no cov", "if __name__ == .__main__.:", "if TYPE_CHECKING:"]
