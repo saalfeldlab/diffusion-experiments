@@ -1,0 +1,32 @@
+{
+  "template": "git@github.com:neptunes5thmoon/cookiecrumbles.git",
+  "commit": "0766c463f148ea4f925470f0333e649648ce5127",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "em+label_generation",
+      "experiment_name": "exp04",
+      "project_slug": "exp04",
+      "author": "Larissa Heinrich",
+      "author_email": "heinrichl@janelia.hhmi.org",
+      "parent_repo": "https://github.com/saalfeldlab/diffusion-experiments",
+      "experiment_description": "Back to exp02 setup in terms of loss weights, but now with bug fix for label loading.",
+      "my_repo_deps": {
+        "repo": [
+          "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git",
+          "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git"
+        ],
+        "branch": [
+          "mymain",
+          "main"
+        ],
+        "use_latest_commit": [
+          true,
+          true
+        ]
+      },
+      "_template": "git@github.com:neptunes5thmoon/cookiecrumbles.git"
+    }
+  },
+  "directory": "diffusion-experiments"
+}
