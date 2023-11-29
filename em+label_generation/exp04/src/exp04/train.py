@@ -12,7 +12,8 @@ from exp04.config import (
 from exp04.utility import flatten_dict, get_repo_and_commit_cwd
 import warnings
 
-warnings.filterwarnings("ignore", module="pydantic_ome_ngff") # line104
+warnings.filterwarnings("ignore", module="pydantic_ome_ngff")  # line104
+
 
 def track(config: TrackingConfig):
     parsed_uri = urlparse(config.tracking_uri)
