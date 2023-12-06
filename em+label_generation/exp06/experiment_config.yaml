@@ -11,7 +11,7 @@ architecture:
   channels: 32
   dim_mults: [1,2,4,8]
 training:
-  train_batch_size: 128
+  train_batch_size: 96
   train_lr: 8e-5
   train_num_steps: 700000
   gradient_accumulate_every: 1
