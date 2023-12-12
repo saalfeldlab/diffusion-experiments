@@ -3,12 +3,10 @@ diffusion:
   timesteps: 1000
   sampling_timesteps: 250
   auto_normalize: False
-  channel_weights: [
-            1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,31
-        ]
+  
 architecture:
   dim: 64
-  channels: 32
+  channels: 31
   dim_mults: [1,2,4,8]
 training:
   train_batch_size: 96
