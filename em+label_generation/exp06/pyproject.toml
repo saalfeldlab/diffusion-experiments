@@ -8,7 +8,10 @@ dependencies = [
   "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git@e8c016f504c8324962830a32aa919af15e1c1209",
   "mlflow",
   "pydantic",
-  "GitPython"
+  "GitPython",
+  "zarr",
+  "imageio",
+  "distinctipy"
 ]
 name = "exp06"
 dynamic = ["version"]
