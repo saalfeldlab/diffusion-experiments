@@ -1,6 +1,15 @@
 from typing import Dict, Literal, Optional, Tuple, Union, Sequence
 
-from denoising_diffusion_pytorch import GaussianDiffusion, SimpleDataset, Unet, ZarrDataset, CellMapDatasets3Das2D, CellMapDataset3Das2D
+from denoising_diffusion_pytorch import (
+    GaussianDiffusion,
+    SimpleDataset,
+    Unet,
+    ZarrDataset,
+    CellMapDatasets3Das2D,
+    CellMapDataset3Das2D,
+    PreProcessOptions,
+    InferenceSaver,
+)
 from pydantic import BaseModel, Field
 
 
@@ -57,6 +66,7 @@ class ZarrDataConfig(BaseModel):
     def get_constructor(self):
         return ZarrDataset
 
+
 class CellMapDataset3Das2DConfig(BaseModel):
     data_type: Literal["cellmap3das2d_single"]
     data_paths: Sequence[str]
@@ -64,7 +74,7 @@ class CellMapDataset3Das2DConfig(BaseModel):
     scale: Dict[Literal["x", "y", "z"], int]
     augment_horizontal_flip: bool = True
     augment_vertical_flip: bool = True
-    allow_single_class_crops: Union[None, Sequence[Union[str,None]]] = None
+    allow_single_class_crops: Union[None, Sequence[Union[str, None]]] = None
     annotation_path: Optional[str] = None
     crop_list: Optional[Sequence[str]] = None
     raw_dataset: Optional[str] = None
@@ -72,8 +82,10 @@ class CellMapDataset3Das2DConfig(BaseModel):
     pre_load: bool = False
     contrast_adjust: bool = True
     include_raw: bool = True
+
     def get_constructor(self):
         return CellMapDataset3Das2D
+
 
 class CellMapDatasets3Das2DConfig(BaseModel):
     data_type: Literal["cellmap3das2d"]
@@ -83,13 +95,14 @@ class CellMapDatasets3Das2DConfig(BaseModel):
     augment_horizontal_flip: bool = True
     augment_vertical_flip: bool = True
     annotation_paths: Union[None, Sequence[Union[str, None]]] = None
-    allow_single_class_crops: Union[None, Sequence[Union[str,None]]] = None
+    allow_single_class_crops: Union[None, Sequence[Union[str, None]]] = None
     crop_lists: Union[None, Sequence[Union[None, Sequence[str]]]] = None
     raw_datasets: Union[None, Sequence[str]] = None
     dask_workers: int = 0
     pre_load: bool = False
     contrast_adjust: bool = True
     include_raw: bool = True
+
     def get_constructor(self):
         return CellMapDatasets3Das2D
 
@@ -101,10 +114,19 @@ class TrackingConfig(BaseModel):
     run_name: Optional[str] = None
 
 
+class InferenceSaverConfig(BaseModel):
+    channel_assignment: dict[str, tuple(tuple[int, int, int], Sequence[PreProcessOptions | None])]
+    sample_digits: int = 5
+    def get_constructor(self):
+        return InferenceSaver
+
 class ExperimentConfig(BaseModel):
     image_size: int
     architecture: UnetConfig  # turn this into union to add more architectures
     diffusion: GaussianDiffusionConfig  # turn this into union to add more architectures
-    data: Union[SimpleDataConfig, ZarrDataConfig, CellMapDatasets3Das2DConfig, CellMapDataset3Das2DConfig] = Field(..., discriminator="data_type")
+    data: Union[SimpleDataConfig, ZarrDataConfig, CellMapDatasets3Das2DConfig, CellMapDataset3Das2DConfig] = Field(
+        ..., discriminator="data_type"
+    )
     training: TrainingConfig
     tracking: TrackingConfig
+    inference_saver: InferenceSaver

@@ -12,7 +12,8 @@ from exp07.config import (
 from exp07.utility import flatten_dict, get_repo_and_commit_cwd
 import warnings
 
-warnings.filterwarnings("ignore", module="pydantic_ome_ngff") # line104
+warnings.filterwarnings("ignore", module="pydantic_ome_ngff")  # line104
+
 
 def track(config: TrackingConfig):
     parsed_uri = urlparse(config.tracking_uri)
@@ -46,6 +47,7 @@ def run():
         diffusion = config.diffusion.get_constructor()(
             architecture, image_size=config.image_size, **config.diffusion.dict()
         )
+        inference_saver = config.inference_saver.get_constructor()(**config.inference_saver.dict())
         data_args = config.data.dict()
         del data_args["data_type"]
         data_args["image_size"] = config.image_size
@@ -66,7 +68,8 @@ def run():
         trainer = Trainer(
             diffusion,
             dataset,
-            results_folder=parsed_artifact_uri.path,
+            inference_saver,
+            results_folder=os.path.join(parsed_artifact_uri.path, "checkpoints"),
             **config.training.dict(),
         )
         trainer.train()
