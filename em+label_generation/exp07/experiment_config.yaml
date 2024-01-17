@@ -11,16 +11,16 @@ architecture:
   channels: 32
   dim_mults: [1,2,4,8]
 training:
-  train_batch_size: 64
+  train_batch_size: 96
   train_lr: 8e-5
   train_num_steps: 700000
-  gradient_accumulate_every: 3
+  gradient_accumulate_every: 1
   ema_decay: 0.995
   amp: False
   calculate_fid: False
-  dataloader_nworkers: 88
+  dataloader_nworkers: 30
   persitent_workers: True
-  prefetch_factor: 2
+  prefetch_factor: 5
 
 data:
   data_type: "cellmap3das2d"
@@ -73,6 +73,8 @@ data:
                      "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_sum159-1/groundtruth.zarr",
                      "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_jurkat-1/groundtruth.zarr"]
   dask_workers: 1
+  crop_lists: [["crop1", "crop113", "crop13", "crop14", "crop15", "crop155", "crop16", "crop18", "crop19", "crop23", "crop28", "crop3", "crop4", "crop6", "crop7", "crop8"], ["crop101", "crop111", "crop181", "crop27", "crop33", "crop34", "crop50", "crop51"], ["crop109", "crop110", "crop31", "crop32", "crop39", "crop40", "crop42", "crop48", "crop49"], ["crop20", "crop21", "crop22", "crop80"], ["crop107", "crop112", "crop126", "crop180", "crop182", "crop35", "crop36", "crop37", "crop38", "crop43", "crop47"]]
+  
   pre_load: True
   contrast_adjust: True
   include_raw: True
