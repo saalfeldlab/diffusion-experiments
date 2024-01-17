@@ -1,0 +1,32 @@
+{
+  "template": "git@github.com:neptunes5thmoon/cookiecrumbles.git",
+  "commit": "2ebc14ff97bbca981c98b6e0f45d952b7b3fc247",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "em+label_generation",
+      "experiment_name": "exp07",
+      "project_slug": "exp07",
+      "author": "Larissa Heinrich",
+      "author_email": "heinrichl@janelia.hhmi.org",
+      "parent_repo": "https://github.com/saalfeldlab/diffusion-experiments",
+      "experiment_description": "Test run to implement inference pipeline",
+      "my_repo_deps": {
+        "repo": [
+          "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git",
+          "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git"
+        ],
+        "branch": [
+          "mymain",
+          "main"
+        ],
+        "use_latest_commit": [
+          true,
+          true
+        ]
+      },
+      "_template": "git@github.com:neptunes5thmoon/cookiecrumbles.git"
+    }
+  },
+  "directory": "diffusion-experiments"
+}

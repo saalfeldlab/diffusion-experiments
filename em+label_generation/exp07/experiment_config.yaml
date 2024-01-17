@@ -1,0 +1,83 @@
+image_size: 96
+diffusion:
+  timesteps: 1000
+  sampling_timesteps: 250
+  auto_normalize: False
+  channel_weights: [
+            1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,31
+        ]
+architecture:
+  dim: 64
+  channels: 32
+  dim_mults: [1,2,4,8]
+training:
+  train_batch_size: 64
+  train_lr: 8e-5
+  train_num_steps: 700000
+  gradient_accumulate_every: 3
+  ema_decay: 0.995
+  amp: False
+  calculate_fid: False
+  dataloader_nworkers: 88
+  persitent_workers: True
+  prefetch_factor: 2
+
+data:
+  data_type: "cellmap3das2d"
+  data_paths: ["/nrs/cellmap/data/jrc_hela-2/jrc_hela-2.n5",
+               "/nrs/cellmap/data/jrc_hela-3/jrc_hela-3.n5",
+               "/nrs/cellmap/data/jrc_macrophage-2/jrc_macrophage-2.n5",
+               "/nrs/cellmap/data/jrc_sum159-1/jrc_sum159-1.n5",
+               "/nrs/cellmap/data/jrc_jurkat-1/jrc_jurkat-1.n5"
+  ]
+  raw_datasets: [None, None, None, None, None]
+  class_list: [
+            "ecs",
+            "pm",
+            "mito_mem",
+            "mito_lum",
+            "mito_ribo",
+            "golgi_mem",
+            "golgi_lum",
+            "ves_mem",
+            "ves_lum",
+            "endo_mem",
+            "endo_lum",
+            "lyso_mem",
+            "lyso_lum",
+            "ld_mem",
+            "ld_lum",
+            "er_mem",
+            "er_lum",
+            "eres_mem",
+            "eres_lum",
+            "ne_mem",
+            "ne_lum",
+            "np_out",
+            "np_in",
+            "hchrom",
+            "nhchrom",
+            "echrom",
+            "nechrom",
+            "nucpl",
+            "nucleo",
+            "mt_out",
+            "mt_in",
+        ]
+  scale: {"x":4, "y":4, "z":4}
+  augment_horizontal_flip: True
+  augment_vertical_flip: True
+  annotation_paths: ["/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_hela-2/groundtruth.zarr",
+                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_hela-3/groundtruth.zarr",
+                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_macrophage-2/groundtruth.zarr",
+                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_sum159-1/groundtruth.zarr",
+                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_jurkat-1/groundtruth.zarr"]
+  dask_workers: 1
+  pre_load: True
+  contrast_adjust: True
+  include_raw: True
+  
+tracking:
+  experiment_name: em+label_generation
+  tracking_uri: file:///nrs/saalfeld/heinrichl/mlflow_tracking/diffusion
+  run_name: exp07
