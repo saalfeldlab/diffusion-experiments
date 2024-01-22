@@ -97,7 +97,7 @@ class CellMapDatasets3Das2DConfig(BaseModel):
     annotation_paths: Union[None, Sequence[Union[str, None]]] = None
     allow_single_class_crops: Union[None, Sequence[Union[str, None]]] = None
     crop_lists: Union[None, Sequence[Union[None, Sequence[str]]]] = None
-    raw_datasets: Union[None, Sequence[None, str]] = None
+    raw_datasets: Union[None, Sequence[Union[None, str]]] = None
     dask_workers: int = 0
     pre_load: bool = False
     contrast_adjust: bool = True
