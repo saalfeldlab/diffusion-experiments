@@ -79,7 +79,7 @@ data:
   contrast_adjust: True
   include_raw: True
 inference_saver:
-  channel_assignment: {"label": ((0,31,1), [None]), "raw": ((31,32,1), [None])}
+  channel_assignment: {"label": [ [0, 31, 1], [None,]], "raw": [[31, 32, 1], [None,]]}
 tracking:
   experiment_name: em+label_generation
   tracking_uri: file:///nrs/saalfeld/heinrichl/mlflow_tracking/diffusion
