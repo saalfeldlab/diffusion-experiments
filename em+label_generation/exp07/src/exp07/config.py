@@ -115,7 +115,7 @@ class TrackingConfig(BaseModel):
 
 
 class InferenceSaverConfig(BaseModel):
-    channel_assignment: dict[str, tuple(tuple[int, int, int], Sequence[PreProcessOptions | None])]
+    channel_assignment: dict[str, tuple[tuple[int, int, int], Sequence[PreProcessOptions | None]]]
     sample_digits: int = 5
     def get_constructor(self):
         return InferenceSaver
