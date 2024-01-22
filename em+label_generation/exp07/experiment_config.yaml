@@ -21,6 +21,7 @@ training:
   dataloader_nworkers: 30
   persitent_workers: True
   prefetch_factor: 5
+  save_and_sample_every: 100
 
 data:
   data_type: "cellmap3das2d"

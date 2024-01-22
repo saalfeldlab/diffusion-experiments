@@ -40,6 +40,7 @@ class TrainingConfig(BaseModel):
     dataloader_nworkers: int = 88
     persistent_workers: bool = True
     prefetch_factor: int = 2
+    save_and_sample_every: int = 1000
 
 
 class UnetConfig(BaseModel):
