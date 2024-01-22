@@ -30,7 +30,7 @@ data:
                "/nrs/cellmap/data/jrc_sum159-1/jrc_sum159-1.n5",
                "/nrs/cellmap/data/jrc_jurkat-1/jrc_jurkat-1.n5"
   ]
-  raw_datasets: [None, None, None, None, None]
+  raw_datasets: [null, null, null, null, null]
   class_list: [
             "ecs",
             "pm",
@@ -79,7 +79,7 @@ data:
   contrast_adjust: True
   include_raw: True
 inference_saver:
-  channel_assignment: {"label": [ [0, 31, 1], [None,]], "raw": [[31, 32, 1], [None,]]}
+  channel_assignment: {"label": [ [0, 31, 1], [null,]], "raw": [[31, 32, 1], [null,]]}
 tracking:
   experiment_name: em+label_generation
   tracking_uri: file:///nrs/saalfeld/heinrichl/mlflow_tracking/diffusion
