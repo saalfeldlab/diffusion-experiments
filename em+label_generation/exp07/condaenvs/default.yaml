@@ -69,7 +69,7 @@ dependencies:
       - greenlet==3.0.3
       - gunicorn==21.2.0
       - h5py==3.10.0
-      - huggingface-hub==0.20.2
+      - huggingface-hub==0.20.3
       - idna==3.6
       - importlib-metadata==4.13.0
       - inflection==0.5.1
