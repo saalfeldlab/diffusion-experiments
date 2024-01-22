@@ -118,10 +118,10 @@ class TrackingConfig(BaseModel):
 class InferenceSaverConfig(BaseModel):
     channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, PreProcessOptions]]]]
     sample_digits: int = 5
-    
+
     def get_constructor(self):
         return InferenceSaver
-    
+
     @validator("channel_assignment", pre=True, always=True)
     def convert_enum_from_str(cls, value):
         if isinstance(value, dict):
@@ -132,18 +132,17 @@ class InferenceSaverConfig(BaseModel):
                     and isinstance(dict_value[1], (list, tuple))
                 ):
                     processed_options = []
-                    print(dict_value[1])
                     for option in dict_value[1]:
                         if isinstance(option, str):
                             try:
                                 processed_options.append(PreProcessOptions[option])
                             except KeyError:
-                                raise ValueError(f"Invalid preprocess option: {option}"
-                                                 )
+                                raise ValueError(f"Invalid preprocess option: {option}")
                         else:
                             processed_options.append(option)
                     value[key] = (dict_value[0], processed_options)
         return value
+
 
 class ExperimentConfig(BaseModel):
     image_size: int
