@@ -4,12 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 dependencies = [
-  "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git@759d1b5cbe1359b2cdb639013eba45433dcdafc5",
+  "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git@282ee42093c0ee8bcb76ec1bc33bd28fd1f782f2",
   "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git@e8c016f504c8324962830a32aa919af15e1c1209",
   "mlflow",
   "pydantic",
   "GitPython",
-  "zarr"
+  "zarr",
 ]
 name = "exp07"
 dynamic = ["version"]
@@ -18,9 +18,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
 keywords = []
-authors = [
-  { name = "Larissa Heinrich", email = "heinrichl@janelia.hhmi.org" },
-]
+authors = [{ name = "Larissa Heinrich", email = "heinrichl@janelia.hhmi.org" }]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Programming Language :: Python",
