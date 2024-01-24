@@ -1,14 +1,14 @@
-from typing import Dict, Literal, Optional, Tuple, Union, Sequence
+from typing import Dict, Literal, Optional, Sequence, Tuple, Union
 
 from denoising_diffusion_pytorch import (
+    CellMapDataset3Das2D,
+    CellMapDatasets3Das2D,
     GaussianDiffusion,
+    PostProcessOptions,
+    SampleExporter,
     SimpleDataset,
     Unet,
     ZarrDataset,
-    CellMapDatasets3Das2D,
-    CellMapDataset3Das2D,
-    PreProcessOptions,
-    InferenceSaver,
 )
 from pydantic import BaseModel, Field, validator
 
@@ -115,12 +115,16 @@ class TrackingConfig(BaseModel):
     run_name: Optional[str] = None
 
 
-class InferenceSaverConfig(BaseModel):
-    channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, PreProcessOptions]]]]
+class SampleExporterConfig(BaseModel):
+    channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, PostProcessOptions]]]]
     sample_digits: int = 5
+    file_format: Literal = [".zarr", ".png"]
+    sample_batch_size: int = 1
+    colors: Optional[Sequence[Union[Tuple[int,int,int], Sequence[Tuple[float,float,float]]]]] = None
+    color_threshold: int = 0    
 
     def get_constructor(self):
-        return InferenceSaver
+        return SampleExporter
 
     @validator("channel_assignment", pre=True, always=True)
     def convert_enum_from_str(cls, value):
@@ -135,7 +139,7 @@ class InferenceSaverConfig(BaseModel):
                     for option in dict_value[1]:
                         if isinstance(option, str):
                             try:
-                                processed_options.append(PreProcessOptions[option])
+                                processed_options.append(PostProcessOptions[option])
                             except KeyError:
                                 raise ValueError(f"Invalid preprocess option: {option}")
                         else:
