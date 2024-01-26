@@ -82,7 +82,7 @@ dependencies:
       - labelcomposer==0.0.1
       - linkify-it-py==2.0.2
       - locket==1.0.0
-      - mako==1.3.1
+      - mako==1.3.0
       - markdown==3.5.2
       - markdown-it-py==2.2.0
       - markupsafe==2.1.4
