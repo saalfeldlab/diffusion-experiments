@@ -22,6 +22,19 @@ def flatten_dict(nested_dict: Dict, parent_key: str = "", separator: str = ".", 
     return flat_dict
 
 
+def unflatten_dict(flat_dict: Dict, separator: str = ".") -> Dict:
+    nested_dict = {}
+    for key, value in flat_dict.items():
+        keys = key.split(separator)
+        iterator_dict = nested_dict
+        for nesting_key in keys[:-1]:
+            if nesting_key not in iterator_dict:
+                iterator_dict[nesting_key] = dict()
+            iterator_dict = iterator_dict[nesting_key]
+        iterator_dict[keys[-1]] = value
+    return nested_dict
+
+
 def start_ui() -> None:
     with open("experiment_config.yaml") as config_file:
         yaml_data = yaml.safe_load(config_file)
