@@ -10,6 +10,7 @@ dependencies = [
   "pydantic",
   "GitPython",
   "zarr",
+  "click",
 ]
 name = "exp07"
 dynamic = ["version"]

@@ -1,0 +1,41 @@
+exporter:
+  channel_assignment: {
+            "ecs": [[0,1,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "pm": [[1,2,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "mito_mem": [[2,3,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "mito_lum": [[3,4,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "mito_ribo": [[4,5,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "golgi_mem": [[5,6,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "golgi_lum": [[6,7,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "ves_mem": [[7,8,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "ves_lum": [[8,9,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "endo_mem": [[9,10,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "endo_lum": [[10,11,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "lyso_mem": [[11,12,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "lyso_lum": [[12,13,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "ld_mem": [[13,14,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "ld_lum": [[14,15,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "er_mem": [[15,16, 1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "er_lum": [[16, 17,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "eres_mem": [[17,18,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "eres_lum": [[18,19,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "ne_mem": [[19,20,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "ne_lum": [[20,21,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "np_out": [[21,22, 1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "np_in": [[22,23,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "hchrom": [[23,24,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "nhchrom": [[24,25,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "echrom": [[25,26,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "nechrom": [[26,27,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "nucpl": [[27,28,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "nucleo": [[28,29,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "mt_out": [[29,30,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "mt_in": [[30,31,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
+            "raw": [[31,32,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]]
+  }
+  sample_batch_size: 20
+  file_format: .zarr
+checkpoint: 125
+eval_batch_size: 128
+num_samples: 1024
+experiment_run_id: "98c35e43984c4ca7a96f36ba4d2acfbe"
