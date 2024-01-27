@@ -157,4 +157,5 @@ class ExperimentConfig(BaseModel):
     )
     training: TrainingConfig
     tracking: TrackingConfig
-    inference_saver: SampleExporterConfig
+    exporter: SampleExporterConfig
+

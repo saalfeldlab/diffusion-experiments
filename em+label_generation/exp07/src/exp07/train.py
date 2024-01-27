@@ -47,7 +47,7 @@ def run():
         diffusion = config.diffusion.get_constructor()(
             architecture, image_size=config.image_size, **config.diffusion.dict()
         )
-        inference_saver = config.inference_saver.get_constructor()(**config.inference_saver.dict())
+        sample_exporter = config.exporter.get_constructor()(**config.exporter.dict())
         data_args = config.data.dict()
         del data_args["data_type"]
         data_args["image_size"] = config.image_size
@@ -68,7 +68,7 @@ def run():
         trainer = Trainer(
             diffusion,
             dataset,
-            inference_saver,
+            sample_exporter,
             results_folder=os.path.join(parsed_artifact_uri.path, "checkpoints"),
             **config.training.dict(),
         )
