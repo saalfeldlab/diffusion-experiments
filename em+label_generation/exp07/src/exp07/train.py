@@ -36,6 +36,8 @@ def run():
     config = ExperimentConfig(**yaml_data)
 
     run_id = track(config.tracking)
+    if config.tracking.continue_run_id is None:
+        config.tracking.continue_run_id = run_id
     with mlflow.start_run(run_id=run_id):
         repo, commit_hash = get_repo_and_commit_cwd()
         mlflow.log_param("repo", repo)
