@@ -5,12 +5,13 @@ from denoising_diffusion_pytorch import (
     CellMapDatasets3Das2D,
     GaussianDiffusion,
     PostProcessOptions,
+    PostProcessOptionsNames,
     SampleExporter,
     SimpleDataset,
     Unet,
     ZarrDataset,
 )
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field
 
 
 class GaussianDiffusionConfig(BaseModel):
@@ -116,7 +117,7 @@ class TrackingConfig(BaseModel):
 
 
 class SampleExporterConfig(BaseModel):
-    channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, PostProcessOptions]]]]
+    channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, PostProcessOptionsNames]]]]
     sample_digits: int = 5
     file_format: Literal[".zarr", ".png"] = ".zarr"
     sample_batch_size: int = 1
@@ -125,27 +126,6 @@ class SampleExporterConfig(BaseModel):
 
     def get_constructor(self):
         return SampleExporter
-
-    @validator("channel_assignment", pre=True, always=True)
-    def convert_enum_from_str(cls, value):
-        if isinstance(value, dict):
-            for key, dict_value in value.items():
-                if (
-                    isinstance(dict_value, (list, tuple))
-                    and len(dict_value) == 2
-                    and isinstance(dict_value[1], (list, tuple))
-                ):
-                    processed_options = []
-                    for option in dict_value[1]:
-                        if isinstance(option, str):
-                            try:
-                                processed_options.append(PostProcessOptions[option])
-                            except KeyError:
-                                raise ValueError(f"Invalid preprocess option: {option}")
-                        else:
-                            processed_options.append(option)
-                    value[key] = (dict_value[0], processed_options)
-        return value
 
 
 class ExperimentConfig(BaseModel):
