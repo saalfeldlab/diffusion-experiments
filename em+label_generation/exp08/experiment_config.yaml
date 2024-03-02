@@ -30,7 +30,7 @@ data:
                "/nrs/cellmap/data/jrc_macrophage-2/jrc_macrophage-2.n5",
                "/nrs/cellmap/data/jrc_sum159-1/jrc_sum159-1.n5"
   ]
-  raw_datasets: [null, null, null, null, null]
+  raw_datasets: [null, null, null, null]
   class_list: [
             "ecs",
             "pm",
@@ -75,7 +75,7 @@ data:
   dask_workers: 1
   pre_load: True
   contrast_adjust: True
-  raw_channel: APPEND
+  raw_channel: append
   crop_lists:
     [
       [
