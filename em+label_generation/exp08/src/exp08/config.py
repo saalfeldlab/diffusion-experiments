@@ -121,7 +121,7 @@ class TrackingConfig(BaseModel):
 
 
 class SampleExporterConfig(BaseModel):
-    channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, PostProcessOptionsNames]]]]
+    channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, ProcessOptionsNames]]]]
     sample_digits: int = 5
     file_format: Literal[".zarr", ".png"] = ".zarr"
     sample_batch_size: int = 1
