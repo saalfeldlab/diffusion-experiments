@@ -1,0 +1,32 @@
+{
+  "template": "git@github.com:neptunes5thmoon/cookiecrumbles.git",
+  "commit": "941400982706700bbd1a2e04de839be142207096",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "em+label_generation",
+      "experiment_name": "exp08",
+      "project_slug": "exp08",
+      "author": "Larissa Heinrich",
+      "author_email": "heinrichl@janelia.hhmi.org",
+      "parent_repo": "https://github.com/saalfeldlab/diffusion-experiments",
+      "experiment_description": "Excluding jurkat data to have that as validation set",
+      "my_repo_deps": {
+        "repo": [
+          "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git",
+          "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git"
+        ],
+        "branch": [
+          "mymain",
+          "main"
+        ],
+        "use_latest_commit": [
+          true,
+          true
+        ]
+      },
+      "_template": "git@github.com:neptunes5thmoon/cookiecrumbles.git"
+    }
+  },
+  "directory": "diffusion-experiments"
+}

@@ -1,0 +1,163 @@
+image_size: 96
+diffusion:
+  timesteps: 1000
+  sampling_timesteps: 250
+  auto_normalize: False
+  channel_weights: [
+            1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,31
+        ]
+architecture:
+  dim: 64
+  channels: 32
+  dim_mults: [1,2,4,8]
+training:
+  train_batch_size: 64
+  train_lr: 8e-5
+  train_num_steps: 700000
+  gradient_accumulate_every: 3
+  ema_decay: 0.995
+  amp: False
+  calculate_fid: False
+  dataloader_nworkers: 88
+  persitent_workers: True
+  prefetch_factor: 2
+  save_and_sample_every: 1000
+
+data:
+  data_type: "cellmap3das2d"
+  data_paths: ["/nrs/cellmap/data/jrc_hela-2/jrc_hela-2.n5",
+               "/nrs/cellmap/data/jrc_hela-3/jrc_hela-3.n5",
+               "/nrs/cellmap/data/jrc_macrophage-2/jrc_macrophage-2.n5",
+               "/nrs/cellmap/data/jrc_sum159-1/jrc_sum159-1.n5"
+  ]
+  raw_datasets: [null, null, null, null, null]
+  class_list: [
+            "ecs",
+            "pm",
+            "mito_mem",
+            "mito_lum",
+            "mito_ribo",
+            "golgi_mem",
+            "golgi_lum",
+            "ves_mem",
+            "ves_lum",
+            "endo_mem",
+            "endo_lum",
+            "lyso_mem",
+            "lyso_lum",
+            "ld_mem",
+            "ld_lum",
+            "er_mem",
+            "er_lum",
+            "eres_mem",
+            "eres_lum",
+            "ne_mem",
+            "ne_lum",
+            "np_out",
+            "np_in",
+            "hchrom",
+            "nhchrom",
+            "echrom",
+            "nechrom",
+            "nucpl",
+            "nucleo",
+            "mt_out",
+            "mt_in",
+        ]
+  scale: {"x":4, "y":4, "z":4}
+  augment_horizontal_flip: True
+  augment_vertical_flip: True
+  annotation_paths: ["/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_hela-2/groundtruth.zarr",
+                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_hela-3/groundtruth.zarr",
+                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_macrophage-2/groundtruth.zarr",
+                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_sum159-1/groundtruth.zarr",
+                     ]
+  dask_workers: 1
+  pre_load: True
+  contrast_adjust: True
+  raw_channel: APPEND
+  crop_lists:
+    [
+      [
+        "crop1",
+        "crop113",
+        "crop13",
+        "crop14",
+        "crop15",
+        "crop155",
+        "crop16",
+        "crop18",
+        "crop19",
+        "crop23",
+        "crop28",
+        "crop3",
+        "crop4",
+        "crop6",
+        "crop7",
+        "crop8",
+      ],
+      [
+        "crop101",
+        "crop111",
+        "crop181",
+        "crop27",
+        "crop33",
+        "crop34",
+        "crop50",
+        "crop51",
+      ],
+      [
+        "crop109",
+        "crop110",
+        "crop31",
+        "crop32",
+        "crop39",
+        "crop40",
+        "crop42",
+        "crop48",
+        "crop49",
+      ],
+      ["crop20", "crop21", "crop22", "crop80"],
+    ]
+
+exporter:
+  channel_assignment: {"label": [ [0, 31, 1], [ADJUST_RANGE_0_1_TO_0_255, TO_UINT8, TO_CPU, TO_NUMPY, COLORIZE, GRIDDIFY]], "raw": [[31, 32, 1], [ADJUST_RANGE_0_1_TO_0_255, TO_UINT8, TO_CPU, GRIDDIFY, TO_NUMPY]]}
+  color_threshold: 10
+  colors: [ [50,50,50],
+            [100,100,100],
+            [255,128,0],
+            [128,64,0],
+            [220,172,104],
+            [0,132,255],
+            [0,66,128],
+            [255,0,0],
+            [128,0,0],
+            [0,0,255],
+            [0,0,128],
+            [255,216,0],
+            [128, 108,0],
+            [134,164,247],
+            [79,66,252],
+            [57,215,46],
+            [51,128,46],
+            [85,254,219],
+            [6,185,157],
+            [9,128,0],
+            [5,77,0],
+            [175,249,111],
+            [252,144,211],
+            [168,55,188],
+            [84,23,94],
+            [204,0,102],
+            [102,0,51],
+            [255,0,255],
+            [247,82,104],
+            [255,255,255],
+            [128,128,128],
+  ]
+  sample_batch_size: 20
+  file_format: .png
+tracking:
+  experiment_name: em+label_generation
+  tracking_uri: file:///nrs/saalfeld/heinrichl/mlflow_tracking/diffusion
+  run_name: exp08
