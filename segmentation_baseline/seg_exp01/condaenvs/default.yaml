@@ -183,3 +183,4 @@ dependencies:
 variables:
   HATCH_ENV_ACTIVE: default
 prefix: /home/heinrichl@hhmi.org/brew/mambaforge/envs/seg-exp01_default_3.10
+

@@ -14,7 +14,7 @@ training:
   train_num_steps: 700000
   gradient_accumulate_every: 3
   amp: False
-  dataloader_nworkers: 88
+  dataloader_nworkers: 25
   persistent_workers: True
   prefetch_factor: 2
   save_and_sample_every: 5000
