@@ -127,6 +127,7 @@ class SampleExporterConfig(BaseModel):
     sample_batch_size: int = 1
     colors: Optional[Sequence[Union[Tuple[int, int, int], Sequence[Tuple[float, float, float]]]]] = None
     threshold: int = 0
+    dir: str = "samples"
 
     def get_constructor(self):
         return SampleExporter
