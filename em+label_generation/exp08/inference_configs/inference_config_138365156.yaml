@@ -21,7 +21,7 @@ exporter:
   sample_batch_size: 64
   file_format: .zarr
   sample_digits: 6
-  dir: samples
+  dir: samples_138365156
   threshold: 10
 checkpoint: 141
 eval_batch_size: 128

@@ -18,7 +18,7 @@ training:
   ema_decay: 0.995
   amp: False
   calculate_fid: False
-  dataloader_nworkers: 25
+  dataloader_nworkers: 1
   persitent_workers: True
   prefetch_factor: 2
   save_and_sample_every: 1000
@@ -67,10 +67,10 @@ data:
   scale: {"x":4, "y":4, "z":4}
   augment_horizontal_flip: True
   augment_vertical_flip: True
-  annotation_paths: ["/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_hela-2/groundtruth.zarr",
-                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_hela-3/groundtruth.zarr",
-                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_macrophage-2/groundtruth.zarr",
-                     "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_sum159-1/groundtruth.zarr",
+  annotation_paths: ["/nrs/saalfeld/heinrichl/data/cellmap_labels/reslicing/jrc_hela-2/groundtruth.zarr",
+                     "/nrs/saalfeld/heinrichl/data/cellmap_labels/reslicing/jrc_hela-3/groundtruth.zarr",
+                     "/nrs/saalfeld/heinrichl/data/cellmap_labels/reslicing/jrc_macrophage-2/groundtruth.zarr",
+                     "/nrs/saalfeld/heinrichl/data/cellmap_labels/reslicing/jrc_sum159-1/groundtruth.zarr",
                      ]
   dask_workers: 1
   pre_load: True

@@ -21,9 +21,9 @@ exporter:
   sample_batch_size: 64
   file_format: .zarr
   sample_digits: 6
-  dir: samples
+  dir: samples_138379994
   threshold: 10
 checkpoint: 141
-eval_batch_size: 128
-num_samples: 52480
+eval_batch_size: 192
+num_samples: 9600
 experiment_run_id: 55da5f83a58a4cb982a273c9687a7132

@@ -1,0 +1,10 @@
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_90 -e ./logs/error_90.log -o ./logs/output_90.log ./inference_script.sh
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_91 -e ./logs/error_91.log -o ./logs/output_91.log ./inference_script.sh
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_92 -e ./logs/error_92.log -o ./logs/output_92.log ./inference_script.sh
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_93 -e ./logs/error_93.log -o ./logs/output_93.log ./inference_script.sh
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_94 -e ./logs/error_94.log -o ./logs/output_94.log ./inference_script.sh
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_95 -e ./logs/error_95.log -o ./logs/output_95.log ./inference_script.sh
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_96 -e ./logs/error_96.log -o ./logs/output_96.log ./inference_script.sh
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_97 -e ./logs/error_97.log -o ./logs/output_97.log ./inference_script.sh
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_98 -e ./logs/error_98.log -o ./logs/output_98.log ./inference_script.sh
+bsub -n 2 -gpu "num=1" -W 12:00 -q gpu_rtx8000 -J inference_99 -e ./logs/error_99.log -o ./logs/output_99.log ./inference_script.sh
