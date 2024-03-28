@@ -10,6 +10,7 @@ from exp06.config import (
     TrackingConfig,
 )
 from exp06.utility import flatten_dict, get_repo_and_commit_cwd
+from typing import Literal, Sequence, Optional
 import warnings
 import zarr
 import torch
@@ -17,9 +18,25 @@ import numpy as np
 import matplotlib.pyplot as plt
 from torchvision import utils
 import imageio
-
+import math
+import logging
+logger = logging.getLogger(__name__)
 warnings.filterwarnings("ignore", module="pydantic_ome_ngff")  # line104
 
+def get_next_sample(existing: Sequence[str], digits=None):
+    if len(existing) < 1:
+        next_sample=0
+        if digits is None:
+            digits = 5
+            logger.info(f"Number of digits not specified and no strings given to derive from. Defaulting to {digits}.")
+    else:
+        next_sample = max(int(s) for s in list(existing)) + 1
+        if digits is None:
+            digits = len(list(existing)[0])            
+        elif digits != len(list(existing)[0]):
+            raise ValueError(f"Specified to use {digits} digits but found string with {len(list(existing)[0])} digits")
+    next_sample_str = "{num:0{digits}d}".format(num=next_sample, digits=digits)
+    return next_sample_str
 
 def track(config: TrackingConfig):
     parsed_uri = urlparse(config.tracking_uri)
@@ -116,14 +133,30 @@ def sample_real():
             imageio.imwrite(f"{save_path}{sample_name}/labels.png", result)
             imageio.imwrite(f"{save_path}{sample_name}/raw.png", raw)
 
+ChannelOptions = Literal["colorized", "split_channels"]
+TimestepReturn = Literal["timeseries", "final_timestep"]
 
-def run():
+def run(checkpoint: int, num_samples: int, timesteps: TimestepReturn, channels: ChannelOptions, sample_digits:Optional[int]=None):
+    """_summary_
+
+    Args:
+        checkpoint (int): _description_
+        num_samples (int): _description_
+        timesteps (TimestepReturn): _description_
+        channels (ChannelOptions): _description_
+
+    Raises:
+        NotImplementedError: _description_
+
+    Returns:
+        _type_: _description_
+    """
     # Load configuration from YAML file
     with open("experiment_config.yaml") as config_file:
         yaml_data = yaml.safe_load(config_file)
     config = ExperimentConfig(**yaml_data)
-    
     run_id = track(config.tracking)
+    
     with mlflow.start_run(run_id=run_id):
         architecture = config.architecture.get_constructor()(**config.architecture.dict())
         diffusion = config.diffusion.get_constructor()(
@@ -142,26 +175,45 @@ def run():
         trainer = Trainer(
             diffusion,
             dataset,
-            results_folder=parsed_artifact_uri.path,
+            results_folder=os.path.join(parsed_artifact_uri.path, "checkpoints"),
             **config.training.dict(),
         )
-        trainer.load("300")
-        samples = trainer.ema.ema_model.sample(16, return_all_timesteps=True).cpu().detach()
-        samples = samples.mul(255).clamp_(0,255)
-        sample_grids = [utils.make_grid(samples[:,t,...], 4) for t in range(251)]
-        sample_grids = torch.stack(sample_grids, dim=0).to(torch.uint8).numpy()
-        print(sample_grids.shape)
-        samples_zarr = zarr.group(store=zarr.DirectoryStore(os.path.join(parsed_artifact_uri.path, "timesamplegrids4x4_300.zarr")))
-        existing = [int(s[1:]) for s in list(samples_zarr.keys())]
-        if len(existing) < 1:
-            next_sample=0
-        else:
-            next_sample = max(existing) + 1
-        print(f"adding sample {next_sample}")
-        sample_group = samples_zarr.create_group(f"s{next_sample:03d}")
-        for t in range(251):
-            sample_group.create_dataset(name=f"t{t:03d}", data=sample_grids[t])
-        return next_sample
+        trainer.load(checkpoint)
+
+        samples = trainer.ema.ema_model.sample(num_samples, return_all_timesteps=timesteps=="timeseries").cpu().detach()
+        print(samples.shape)
+        zarr_relative_path = os.path.join("checkpoints", "samples", f"{timesteps}.zarr")
+        group= os.path.join(channels, f"grid_{num_samples}")
+        samples_zarr = zarr.group(store=zarr.DirectoryStore(os.path.join(parsed_artifact_uri.path, zarr_relative_path)))
+        zarr_grp = samples_zarr.require_group(f"{channels}/grid_{num_samples}")
+        next_sample = get_next_sample(zarr_grp.keys(), digits=sample_digits)
+        print(next_sample)
+        sample_grp = zarr_grp.require_group(next_sample)
+        if timesteps == "timeseries":
+            time_digits = len(str(diffusion.sampling_timesteps))
+            for t in range(diffusion.sampling_timesteps+1):
+                img_grp = sample_grp.require_group(name="t{time:0{time_digits}d}".format(time=t, time_digits=time_digits))
+                sample = samples[:,t, ...]
+                #sample_to_zarr(img_grp, samples[:, t, ...], data_args, channels)    
+        elif timesteps == "final_timestep":
+            img_grp = sample_grp 
+            #sample_to_zarr(img_grp, samples, data_args, channels)
+        
+def sample_to_zarr(zarr_img_grp, sample, data_args, channels):
+    samples_per_row = int(math.sqrt(num_samples))
+    if len(data_args["class_list"]) > 0:
+        label = sample[:len(data_args["class_list"]),...]
+        if channels == "colorized":
+            label = rgbify(label)
+        img_grp.create_dataset("labels", utils.make_grid(label, samples_per_row))
+    if data_args["include_raw"]:
+        raw = sample[-1,...]
+        img_grp.create_dataset("raw", utils.make_grid(raw, sample_per_row))
+                
+        
+        # for t in range(251):
+        #     sample_group.create_dataset(name=f"t{t:03d}", data=sample_grids[t])
+        # return next_sample
         # samples_zarr.create_dataset(name=f"s{next_sample:03d}", data=sample_grids)
         
         
@@ -278,10 +330,9 @@ def variant1(sample, class_list, class_luts):
     #rgb_image= rgb_image/np.stack([normalizing_image,]*3, axis=2)
     return rgb_image.astype(np.uint8)
     
-    
-
 if __name__ == "__main__":
 #    sample_no = run()
 #    make_rgb_timeseries(sample_no)
-    real()
+    #real()
+    run(200, 17, "timeseries", "split_channels")
     #make_rgb_timeseries()
