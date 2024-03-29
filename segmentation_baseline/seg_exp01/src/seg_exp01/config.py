@@ -1,21 +1,21 @@
 from typing import Dict, Literal, Optional, Sequence, Tuple, Union
 
 from denoising_diffusion_pytorch import (
-    CellMapDataset3Das2D,
-    CellMapDatasets3Das2D,
     BaselineSegmentation,
     BaselineSegmentationTrainer,
+    CellMapDataset3Das2D,
+    CellMapDatasets3Das2D,
     LabelRepresentation,
     ProcessOptions,
     ProcessOptionsNames,
+    RawChannelOptions,
+    SampleExporter,
     SegmentationActivationNames,
     SegmentationMetrics,
     SegmentationMetricsNames,
-    SampleExporter,
     SimpleDataset,
     Unet,
     ZarrDataset,
-    RawChannelOptions,
 )
 from pydantic import BaseModel, Field
 
@@ -50,6 +50,16 @@ class UnetConfig(BaseModel):
     def get_constructor(self):
         return Unet
 
+class SimpleDatasetConfig(BaseModel):
+    data_type: Literal["simple"]
+    folder: str
+    image_size: Optional[int] = None
+    exts: Sequence[str] = ["jpg", "jpeg", "png", "tiff"]
+    augment_horizontal_flip: bool = False
+    augment_vertical_flip: bool = False
+    load_to_ram: bool = False
+    def get_constructor(self):
+        return SimpleDataset
 
 class CellMapDataset3Das2DConfig(BaseModel):
     data_type: Literal["cellmap3das2d_single"]
@@ -109,6 +119,7 @@ class SampleExporterConfig(BaseModel):
     sample_batch_size: int = 1
     colors: Optional[Sequence[Union[Tuple[int, int, int], Sequence[Tuple[float, float, float]]]]] = None
     threshold: int = 0
+    dir: str = "samples"
 
     def get_constructor(self):
         return SampleExporter
@@ -129,10 +140,19 @@ class ExperimentConfig(BaseModel):
     loader_exporter: SampleExporterConfig
     prediction_exporter: SampleExporterConfig
 
+class PredictorConfig(BaseModel):
+    batch_size: int
+    dataloader_nworkers: int = 88
+    milestone: int
+    include_input: bool = True
 
 class InferenceConfig(BaseModel):
     exporter: SampleExporterConfig
-    checkpoint: int
-    eval_batch_size: int
-    num_samples: int
+    data: Union[CellMapDatasets3Das2DConfig, CellMapDataset3Das2DConfig, SimpleDatasetConfig] = Field(
+        ..., discriminator="data_type"
+    )
+    predictor: PredictorConfig
     experiment_run_id: str
+
+
+    
