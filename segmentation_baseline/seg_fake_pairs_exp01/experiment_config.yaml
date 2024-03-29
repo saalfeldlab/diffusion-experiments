@@ -1,0 +1,201 @@
+image_size: 96
+segmentation:
+  loss_fn: CROSS_ENTROPY
+  activation: SOFTMAX
+architecture:
+  dim: 64
+  out_dim: 32
+  channels: 1
+  dim_mults: [1, 2, 4, 8]
+training:
+  train_batch_size: null
+  validation_batch_size: 64
+  train_lr: 8e-5
+  train_num_steps: 700000
+  gradient_accumulate_every: 3
+  amp: False
+  dataloader_nworkers: 25
+  persistent_workers: True
+  prefetch_factor: 2
+  save_and_sample_every: 5000
+  split_batches: False
+  shuffle_dataloader: False
+  repeat_data: False
+
+training_data:
+  data_type: batchedzarrsamples
+  zarr_path: /nrs/saalfeld/heinrichl/mlflow_tracking/diffusion/695944031355267611/55da5f83a58a4cb982a273c9687a7132/artifacts/checkpoints/ckpt_141/samples.zarr
+  raw_channel: first
+
+validation_data:
+  data_type: "cellmap3das2d_single"
+  data_path: "/nrs/cellmap/data/jrc_jurkat-1/jrc_jurkat-1.n5"
+  raw_dataset: null
+  class_list:
+    [
+      "ecs",
+      "pm",
+      "mito_mem",
+      "mito_lum",
+      "mito_ribo",
+      "golgi_mem",
+      "golgi_lum",
+      "ves_mem",
+      "ves_lum",
+      "endo_mem",
+      "endo_lum",
+      "lyso_mem",
+      "lyso_lum",
+      "ld_mem",
+      "ld_lum",
+      "er_mem",
+      "er_lum",
+      "eres_mem",
+      "eres_lum",
+      "ne_mem",
+      "ne_lum",
+      "np_out",
+      "np_in",
+      "hchrom",
+      "nhchrom",
+      "echrom",
+      "nechrom",
+      "nucpl",
+      "nucleo",
+      "mt_out",
+      "mt_in",
+    ]
+  scale: { "x": 4, "y": 4, "z": 4 }
+  augment_horizontal_flip: False
+  augment_vertical_flip: False
+  annotation_path: "/home/heinrichl@hhmi.org/data/cellmap/reslicing/jrc_jurkat-1/groundtruth.zarr"
+  crop_list:
+    [
+      "crop107",
+      "crop112",
+      "crop126",
+      "crop180",
+      "crop182",
+      "crop35",
+      "crop36",
+      "crop37",
+      "crop38",
+      "crop43",
+      "crop47",
+    ]
+  dask_workers: 1
+  pre_load: True
+  contrast_adjust: True
+  raw_channel: first
+  label_representation: class_ids
+  random_crop: False
+
+prediction_exporter:
+  channel_assignment:
+    {
+      "label":
+        [
+          [0, 33, 1],
+          [
+            ADJUST_RANGE_0_1_TO_0_255,
+            TO_UINT8,
+            TO_CPU,
+            TO_NUMPY,
+            COLORIZE,
+            GRIDDIFY,
+          ],
+        ],
+    }
+  threshold: 10
+  colors:
+    [
+      [0, 0, 0],
+      [50, 50, 50],
+      [100, 100, 100],
+      [255, 128, 0],
+      [128, 64, 0],
+      [220, 172, 104],
+      [0, 132, 255],
+      [0, 66, 128],
+      [255, 0, 0],
+      [128, 0, 0],
+      [0, 0, 255],
+      [0, 0, 128],
+      [255, 216, 0],
+      [128, 108, 0],
+      [134, 164, 247],
+      [79, 66, 252],
+      [57, 215, 46],
+      [51, 128, 46],
+      [85, 254, 219],
+      [6, 185, 157],
+      [9, 128, 0],
+      [5, 77, 0],
+      [175, 249, 111],
+      [252, 144, 211],
+      [168, 55, 188],
+      [84, 23, 94],
+      [204, 0, 102],
+      [102, 0, 51],
+      [255, 0, 255],
+      [247, 82, 104],
+      [255, 255, 255],
+      [128, 128, 128],
+    ]
+  sample_batch_size: 9
+  file_format: .png
+
+loader_exporter:
+  channel_assignment:
+    {
+      "raw":
+        [
+          [0, 1, 1],
+          [ADJUST_RANGE_NEG1_1_TO_0_255, TO_UINT8, TO_CPU, GRIDDIFY, TO_NUMPY],
+        ],
+      "label": [[1, 2, 1], [TO_UINT8, TO_CPU, TO_NUMPY, RGB_LABELS, GRIDDIFY]],
+    }
+  threshold: 10
+  colors:
+    [
+      [0, 0, 0],
+      [50, 50, 50],
+      [100, 100, 100],
+      [255, 128, 0],
+      [128, 64, 0],
+      [220, 172, 104],
+      [0, 132, 255],
+      [0, 66, 128],
+      [255, 0, 0],
+      [128, 0, 0],
+      [0, 0, 255],
+      [0, 0, 128],
+      [255, 216, 0],
+      [128, 108, 0],
+      [134, 164, 247],
+      [79, 66, 252],
+      [57, 215, 46],
+      [51, 128, 46],
+      [85, 254, 219],
+      [6, 185, 157],
+      [9, 128, 0],
+      [5, 77, 0],
+      [175, 249, 111],
+      [252, 144, 211],
+      [168, 55, 188],
+      [84, 23, 94],
+      [204, 0, 102],
+      [102, 0, 51],
+      [255, 0, 255],
+      [247, 82, 104],
+      [255, 255, 255],
+      [128, 128, 128],
+    ]
+  file_format: .png
+  sample_batch_size: 9
+
+tracking:
+  experiment_name: segmentation_baseline
+  tracking_uri: file:///nrs/saalfeld/heinrichl/mlflow_tracking/diffusion
+  run_name: seg_fake_pairs_exp01
+  continue_run_id: 8fc4791f34c0409291ac47828a4d1436
