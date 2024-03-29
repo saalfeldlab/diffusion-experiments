@@ -33,9 +33,9 @@ exporter:
             "mt_in": [[30,31,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]],
             "raw": [[31,32,1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY]]
   }
-  sample_batch_size: 20
+  sample_batch_size: 1
   file_format: .zarr
-checkpoint: 125
+checkpoint: 126
 eval_batch_size: 128
 num_samples: 1024
 experiment_run_id: "98c35e43984c4ca7a96f36ba4d2acfbe"

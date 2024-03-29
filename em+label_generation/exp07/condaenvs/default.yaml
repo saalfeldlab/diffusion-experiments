@@ -5,71 +5,74 @@ dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=2_gnu
   - bzip2=1.0.8=hd590300_5
-  - ca-certificates=2023.11.17=hbcca054_0
+  - ca-certificates=2024.2.2=hbcca054_0
   - ld_impl_linux-64=2.40=h41732ed_0
   - libffi=3.4.2=h7f98852_5
-  - libgcc-ng=13.2.0=h807b86a_4
-  - libgomp=13.2.0=h807b86a_4
+  - libgcc-ng=13.2.0=h807b86a_5
+  - libgomp=13.2.0=h807b86a_5
   - libnsl=2.0.1=hd590300_0
-  - libsqlite=3.44.2=h2797004_0
+  - libsqlite=3.45.2=h2797004_0
   - libuuid=2.38.1=h0b41bf4_0
   - libxcrypt=4.4.36=hd590300_1
   - libzlib=1.2.13=hd590300_5
-  - ncurses=6.4=h59595ed_2
-  - openssl=3.2.0=hd590300_1
-  - pip=23.3.2=pyhd8ed1ab_0
-  - python=3.10.13=hd12c33a_1_cpython
+  - ncurses=6.4.20240210=h59595ed_0
+  - openssl=3.2.1=hd590300_1
+  - pip=24.0=pyhd8ed1ab_0
+  - python=3.10.14=hd12c33a_0_cpython
   - readline=8.2=h8228510_1
-  - setuptools=69.0.3=pyhd8ed1ab_0
+  - setuptools=69.2.0=pyhd8ed1ab_0
   - tk=8.6.13=noxft_h4845f30_101
-  - wheel=0.42.0=pyhd8ed1ab_0
+  - wheel=0.43.0=pyhd8ed1ab_1
   - xz=5.2.6=h166bdaf_0
   - pip:
-      - accelerate==0.26.1
-      - aiobotocore==2.11.1
-      - aiohttp==3.9.2
+      - accelerate==0.28.0
+      - aiobotocore==2.12.1
+      - aiohttp==3.9.3
       - aioitertools==0.11.0
       - aiosignal==1.3.1
       - alembic==1.13.1
+      - aniso8601==9.0.1
       - asciitree==0.3.3
       - async-timeout==4.0.3
       - attrs==23.2.0
       - backoff==1.11.1
-      - beartype==0.17.0
+      - beartype==0.17.2
       - blinker==1.7.0
-      - botocore==1.34.27
+      - botocore==1.34.51
       - cellmap-schemas==0.2.0
-      - certifi==2023.11.17
+      - certifi==2024.2.2
       - charset-normalizer==3.3.2
       - click==8.1.7
       - cloudpickle==3.0.0
       - contourpy==1.2.0
-      - coverage==7.4.1
+      - coverage==7.4.4
       - cycler==0.12.1
       - dask==2023.12.1
-      - databricks-cli==0.18.0
       - denoising-diffusion-pytorch==1.8.15
       - distributed==2023.12.1
       - docker==7.0.0
       - einops==0.7.0
-      - ema-pytorch==0.3.2
+      - ema-pytorch==0.4.3
       - entrypoints==0.4
       - exceptiongroup==1.2.0
       - exp07==0.0.1
       - fasteners==0.19
       - fibsem-tools==6.3.2
-      - filelock==3.13.1
-      - flask==3.0.1
-      - fonttools==4.47.2
+      - filelock==3.13.3
+      - flask==3.0.2
+      - fonttools==4.50.0
       - frozenlist==1.4.1
       - fsspec==2023.12.2
       - ghp-import==2.1.0
       - gitdb==4.0.11
-      - gitpython==3.1.41
+      - gitpython==3.1.42
+      - graphene==3.3
+      - graphql-core==3.2.3
+      - graphql-relay==3.2.0
       - greenlet==3.0.3
       - gunicorn==21.2.0
       - h5py==3.10.0
-      - huggingface-hub==0.20.3
+      - huggingface-hub==0.22.2
       - idna==3.6
       - importlib-metadata==4.13.0
       - inflection==0.5.1
@@ -80,26 +83,26 @@ dependencies:
       - joblib==1.3.2
       - kiwisolver==1.4.5
       - labelcomposer==0.0.1
-      - linkify-it-py==2.0.2
+      - linkify-it-py==2.0.3
       - locket==1.0.0
-      - mako==1.3.0
-      - markdown==3.5.2
+      - mako==1.3.2
+      - markdown==3.6
       - markdown-it-py==2.2.0
-      - markupsafe==2.1.4
-      - matplotlib==3.8.2
+      - markupsafe==2.1.5
+      - matplotlib==3.8.3
       - mdit-py-plugins==0.4.0
       - mdurl==0.1.2
       - mergedeep==1.3.4
       - mkdocs==1.5.3
       - mkdocs-exclude==1.0.2
-      - mlflow==2.10.0
+      - mlflow==2.11.3
       - mpmath==1.3.0
       - mrcfile==1.5.0
-      - msgpack==1.0.7
-      - multidict==6.0.4
+      - msgpack==1.0.8
+      - multidict==6.0.5
       - networkx==3.2.1
       - numcodecs==0.12.1
-      - numpy==1.26.3
+      - numpy==1.26.4
       - nvidia-cublas-cu12==12.1.3.1
       - nvidia-cuda-cupti-cu12==12.1.105
       - nvidia-cuda-nvrtc-cu12==12.1.105
@@ -109,66 +112,63 @@ dependencies:
       - nvidia-curand-cu12==10.3.2.106
       - nvidia-cusolver-cu12==11.4.5.107
       - nvidia-cusparse-cu12==12.1.0.106
-      - nvidia-nccl-cu12==2.18.1
-      - nvidia-nvjitlink-cu12==12.3.101
+      - nvidia-nccl-cu12==2.19.3
+      - nvidia-nvjitlink-cu12==12.4.99
       - nvidia-nvtx-cu12==12.1.105
-      - oauthlib==3.2.2
       - packaging==23.2
-      - pandas==2.2.0
+      - pandas==2.2.1
       - partd==1.4.1
       - pathspec==0.12.1
       - pillow==10.2.0
       - pint==0.20.1
-      - platformdirs==4.1.0
+      - platformdirs==4.2.0
       - pluggy==1.4.0
-      - protobuf==4.25.2
+      - protobuf==4.25.3
       - psutil==5.9.8
-      - pyairtable==2.2.1
-      - pyarrow==15.0.0
+      - pyairtable==2.3.3
+      - pyarrow==15.0.2
       - pydantic==1.10.14
       - pydantic-ome-ngff==0.3.0
       - pydantic-zarr==0.5.1
       - pygments==2.17.2
-      - pyjwt==2.8.0
-      - pyparsing==3.1.1
-      - pytest==8.0.0
-      - python-dateutil==2.8.2
+      - pyparsing==3.1.2
+      - pytest==8.1.1
+      - python-dateutil==2.9.0.post0
       - python-dotenv==1.0.1
       - pytorch-fid==0.3.0
-      - pytz==2023.3.post1
+      - pytz==2024.1
       - pyyaml==6.0.1
       - pyyaml-env-tag==0.1
       - querystring-parser==1.2.4
       - requests==2.31.0
-      - rich==13.7.0
+      - rich==13.7.1
       - s3fs==2023.12.2
       - safetensors==0.4.2
-      - scikit-learn==1.4.0
+      - scikit-learn==1.4.1.post1
       - scipy==1.12.0
       - six==1.16.0
       - smmap==5.0.1
       - sortedcontainers==2.4.0
-      - sqlalchemy==2.0.25
+      - sqlalchemy==2.0.29
       - sqlparse==0.4.4
       - sympy==1.12
-      - tabulate==0.9.0
       - tblib==3.0.0
       - textual==0.16.0
-      - threadpoolctl==3.2.0
+      - threadpoolctl==3.4.0
       - tifffile==2023.12.9
       - tomli==2.0.1
       - toolz==0.12.1
-      - torch==2.1.2
-      - torchvision==0.16.2
+      - torch==2.2.2
+      - torchvision==0.17.2
       - tornado==6.4
-      - tqdm==4.66.1
-      - triton==2.1.0
-      - typeguard==4.1.5
-      - typing-extensions==4.9.0
-      - tzdata==2023.4
-      - uc-micro-py==1.0.2
+      - tqdm==4.66.2
+      - triton==2.2.0
+      - typeguard==4.2.1
+      - typing-extensions==4.10.0
+      - tzdata==2024.1
+      - uc-micro-py==1.0.3
       - urllib3==2.0.7
-      - watchdog==3.0.0
+      - watchdog==4.0.0
       - werkzeug==3.0.1
       - wrapt==1.16.0
       - xarray==2023.12.0
@@ -176,10 +176,9 @@ dependencies:
       - xarray-multiscale==2.1.0
       - xarray-ome-ngff==1.2.3
       - yarl==1.9.4
-      - zarr==2.16.1
+      - zarr==2.17.1
       - zict==3.0.0
-      - zipp==3.17.0
+      - zipp==3.18.1
 variables:
   HATCH_ENV_ACTIVE: default
-prefix: /home/heinrichl@hhmi.org/brew/mambaforge/envs/exp07_default_3.10
-
+prefix: /groups/saalfeld/home/heinrichl/Brew/mambaforge/envs/exp07_default_3.10
