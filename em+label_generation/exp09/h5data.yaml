@@ -18,6 +18,9 @@ datasets:
   #   - crop361.h5  # adding raw data failed
 
   jrc_cos7-1a:
+    contrast:
+    - 65
+    - 193
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_cos7-1a
     crops:
     - crop234.h5
@@ -36,6 +39,9 @@ datasets:
     - crop257.h5
     - crop292.h5
   jrc_cos7-1b:
+    contrast:
+    - 65
+    - 203
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_cos7-1b
     crops:
     - crop235.h5
@@ -50,6 +56,9 @@ datasets:
     - crop259.h5
     - crop291.h5
   jrc_ctl-id8-1:
+    contrast:
+    - 45306
+    - 56865
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_ctl-id8-1
     crops:
     - crop116.h5
@@ -58,6 +67,9 @@ datasets:
     - crop119.h5
     - crop130.h5
   jrc_fly-mb-1a:
+    contrast:
+    - 0
+    - 195
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_fly-mb-1a
     crops:
     - crop120.h5
@@ -65,6 +77,9 @@ datasets:
     - crop122.h5
     - crop123.h5
   jrc_fly-vnc-1:
+    contrast:
+    - 158
+    - 233
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_fly-vnc-1
     crops:
     - crop78.h5
@@ -74,6 +89,9 @@ datasets:
     - crop176.h5
     - crop185.h5
   jrc_hela-2:
+    contrast:
+    - 89
+    - 207
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_hela-2
     crops:
     - crop1.h5
@@ -103,6 +121,9 @@ datasets:
     - crop113.h5
     - crop155.h5
   jrc_hela-3:
+    contrast:
+    - 0
+    - 255
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_hela-3
     crops:
     - crop27.h5
@@ -125,6 +146,9 @@ datasets:
     - crop111.h5
     - crop181.h5
   jrc_jurkat-1:
+    contrast:
+    - 202
+    - 238
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_jurkat-1
     crops:
     - crop35.h5
@@ -148,6 +172,9 @@ datasets:
     - crop180.h5
     - crop182.h5
   jrc_macrophage-2:
+    contrast:
+    - 191
+    - 255
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_macrophage-2
     crops:
     - crop31.h5
@@ -175,6 +202,9 @@ datasets:
     - crop452.h5
     # - crop478.h5 # adding raw data failed
   jrc_mus-kidney:
+    contrast:
+    - 0
+    - 215
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_mus-kidney
     crops:
     # - crop129.h5 # adding raw data failed
@@ -210,6 +240,9 @@ datasets:
     crops:
     - crop421.h5
   jrc_mus-liver:
+    contrast:
+    - 0
+    - 194
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_mus-liver
     crops:
     - crop124.h5
@@ -243,6 +276,9 @@ datasets:
     - crop473.h5
     # - crop475.h5 # adding raw data failed
   jrc_mus-liver-zon-1:
+    contrast:
+    - 8
+    - 219
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_mus-liver-zon-1
     crops:
     # - crop266.h5 # missing 'unknown' in encoding
@@ -296,6 +332,9 @@ datasets:
     # - crop414.h5 # adding raw data failed
     # - crop415.h5 # adding raw data failed
   jrc_mus-liver-zon-2:
+    contrast:
+    - 0
+    - 205
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_mus-liver-zon-2
     crops:
     - crop333.h5
@@ -319,10 +358,16 @@ datasets:
     - crop387.h5
     - crop408.h5
   jrc_mus-nacc-1:
+    contrast:
+    - 0
+    - 255
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_mus-nacc-1
     crops:
       - crop115.h5
   jrc_mus-pancreas-1:
+    contrast:
+    - 153
+    - 216
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_mus-pancreas-1
     crops:
     - crop106.h5
@@ -332,6 +377,9 @@ datasets:
   #   - crop422.h5 # adding raw data failed
   #   - crop477.h5 # adding raw data failed
   jrc_sum159-1:
+    contrast:
+    - 134
+    - 255
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_sum159-1
     crops:
     - crop20.h5
@@ -348,6 +396,9 @@ datasets:
     - crop98.h5
     - crop99.h5
   jrc_sum159-4:
+    contrast:
+    - 130
+    - 204
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_sum159-4
     crops:
     - crop186.h5
@@ -369,6 +420,9 @@ datasets:
     - crop218.h5
     - crop219.h5
   jrc_ut21-1413-003:
+    contrast:
+    - 0
+    - 165
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_ut21-1413-003
     crops:
     - crop190.h5
@@ -390,6 +444,9 @@ datasets:
     - crop227.h5
     - crop228.h5
   jrc_zf-cardiac-1:
+    contrast:
+    - 0
+    - 255
     crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/h5_export_092624/jrc_zf-cardiac-1
     crops:
     # - crop338.h5  # adding raw data failed
