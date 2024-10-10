@@ -1,0 +1,429 @@
+
+datasets:
+  jrc_hela-2:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_hela-2
+    crops:
+      - crop1.zarr
+      - crop3.zarr
+      - crop4.zarr
+      - crop6.zarr
+      - crop7.zarr
+      - crop8.zarr
+      - crop9.zarr
+      - crop13.zarr
+      - crop14.zarr
+      - crop15.zarr
+      - crop16.zarr
+      - crop18.zarr
+      - crop19.zarr
+      - crop23.zarr
+      - crop28.zarr
+      - crop54.zarr
+      - crop55.zarr
+      - crop56.zarr
+      - crop57.zarr
+      - crop58.zarr
+      - crop59.zarr
+      - crop94.zarr
+      - crop95.zarr
+      - crop96.zarr
+      - crop113.zarr
+      - crop155.zarr
+
+  jrc_sum159-1:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_sum159-1
+    crops:
+      - crop20.zarr
+      # - crop21.zarr # adding raw data failed
+      - crop22.zarr
+      - crop25.zarr
+      - crop26.zarr
+      - crop80.zarr
+      - crop81.zarr
+      - crop82.zarr
+      - crop83.zarr
+      - crop84.zarr
+      - crop97.zarr
+      - crop98.zarr
+      - crop99.zarr
+
+
+  jrc_hela-3:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_hela-3
+    crops:
+      - crop27.zarr
+      - crop33.zarr
+      - crop34.zarr
+      - crop50.zarr
+      - crop51.zarr
+      - crop60.zarr
+      - crop61.zarr
+      - crop62.zarr
+      - crop63.zarr
+      - crop64.zarr
+      - crop65.zarr
+      - crop85.zarr
+      - crop86.zarr
+      - crop87.zarr
+      - crop100.zarr
+      - crop101.zarr
+      - crop102.zarr
+      - crop111.zarr
+      - crop181.zarr
+
+
+  jrc_macrophage-2:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_macrophage-2
+    crops:
+      - crop31.zarr
+      - crop32.zarr
+      - crop39.zarr
+      - crop40.zarr
+      - crop42.zarr
+      - crop48.zarr
+      - crop49.zarr
+      - crop72.zarr
+      - crop73.zarr
+      - crop74.zarr
+      - crop75.zarr
+      - crop76.zarr
+      - crop77.zarr
+      - crop88.zarr
+      - crop89.zarr
+      - crop90.zarr
+      - crop109.zarr
+      - crop110.zarr
+
+
+  jrc_jurkat-1:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_jurkat-1
+    crops:
+      - crop35.zarr
+      - crop36.zarr
+      - crop37.zarr
+      - crop38.zarr
+      - crop43.zarr
+      - crop47.zarr
+      - crop66.zarr
+      - crop67.zarr
+      - crop68.zarr
+      - crop69.zarr
+      - crop70.zarr
+      - crop71.zarr
+      - crop91.zarr
+      - crop92.zarr
+      - crop93.zarr
+      - crop107.zarr
+      - crop112.zarr
+      - crop126.zarr
+      - crop180.zarr
+      - crop182.zarr
+
+
+  jrc_fly-vnc-1:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_fly-vnc-1
+    crops:
+      - crop78.zarr
+      - crop79.zarr
+      - crop173.zarr
+      - crop174.zarr
+      - crop176.zarr
+      - crop185.zarr
+
+  jrc_mus-pancreas-1:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-pancreas-1
+    crops:
+      - crop106.zarr
+  
+
+
+  jrc_mus-nacc-1:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-nacc-1
+    crops:
+      - crop115.zarr
+
+  jrc_ctl-id8-1:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_ctl-id8-1
+    crops:
+      - crop116.zarr
+      - crop117.zarr
+      - crop118.zarr
+      - crop119.zarr
+      - crop130.zarr
+
+  jrc_fly-mb-1a:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_fly-mb-1a
+    crops:
+      - crop120.zarr
+      - crop121.zarr
+      - crop122.zarr
+      - crop123.zarr
+
+  jrc_mus-liver:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver
+    crops:
+      - crop124.zarr
+      - crop125.zarr
+      - crop131.zarr
+      - crop132.zarr
+      - crop133.zarr
+      - crop135.zarr
+      - crop136.zarr
+      - crop137.zarr
+      - crop138.zarr
+      - crop139.zarr
+      - crop142.zarr
+      - crop143.zarr
+      - crop144.zarr
+      - crop145.zarr
+      - crop150.zarr
+      - crop151.zarr
+      - crop157.zarr
+      - crop171.zarr
+      - crop172.zarr
+      - crop175.zarr
+      - crop177.zarr
+      - crop183.zarr
+      # - crop264.zarr # adding raw data failed
+      - crop416.zarr
+      - crop417.zarr
+
+  jrc_mus-kidney:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-kidney
+    crops:
+      # - crop129.zarr # adding raw data failed
+      - crop140.zarr
+      - crop141.zarr
+      - crop146.zarr
+      - crop147.zarr
+      - crop148.zarr
+      - crop149.zarr
+      - crop156.zarr
+      - crop158.zarr
+      - crop159.zarr
+      - crop160.zarr
+      - crop161.zarr
+      - crop162.zarr
+      - crop163.zarr
+      - crop164.zarr
+      - crop165.zarr
+      - crop166.zarr
+      - crop179.zarr
+      - crop184.zarr
+      # - crop221.zarr # adding raw data failed
+      - crop229.zarr
+      - crop230.zarr
+      - crop231.zarr
+
+  jrc_sum159-4:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_sum159-4
+    crops:
+      - crop186.zarr
+      - crop187.zarr
+      - crop188.zarr
+      - crop189.zarr
+      - crop201.zarr
+      # - crop202.zarr # adding raw data failed
+      - crop203.zarr
+      - crop206.zarr
+      - crop208.zarr
+      - crop209.zarr
+      - crop210.zarr
+      - crop211.zarr
+      - crop212.zarr
+      - crop213.zarr
+      - crop216.zarr
+      - crop217.zarr
+      - crop218.zarr
+      - crop219.zarr
+
+  jrc_ut21-1413-003:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_ut21-1413-003
+    crops:
+      - crop190.zarr
+      - crop191.zarr
+      - crop192.zarr
+      - crop193.zarr
+      - crop195.zarr
+      - crop196.zarr
+      - crop197.zarr
+      - crop198.zarr
+      - crop199.zarr
+      - crop200.zarr
+      - crop214.zarr
+      - crop220.zarr
+      - crop222.zarr
+      - crop224.zarr
+      - crop225.zarr
+      - crop226.zarr
+      - crop227.zarr
+      - crop228.zarr
+
+  jrc_cos7-1a:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_cos7-1a
+    crops:
+      - crop234.zarr
+      - crop236.zarr
+      - crop237.zarr
+      - crop239.zarr
+      - crop243.zarr
+      - crop244.zarr
+      - crop247.zarr
+      - crop248.zarr
+      # - crop251.zarr # adding raw data failed
+      - crop252.zarr
+      # - crop253.zarr
+      # - crop254.zarr # adding raw data failed
+      - crop256.zarr
+      - crop257.zarr
+      - crop292.zarr
+
+  jrc_cos7-1b:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_cos7-1b
+    crops:
+      - crop235.zarr
+      - crop238.zarr
+      - crop240.zarr
+      - crop241.zarr
+      - crop242.zarr
+      - crop245.zarr
+      - crop249.zarr
+      - crop255.zarr
+      - crop258.zarr
+      - crop259.zarr
+      - crop291.zarr
+
+  jrc_mus-liver-zon-1:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver-zon-1
+    crops:
+      # - crop266.zarr # missing 'unknown' in encoding
+      - crop267.zarr
+      - crop268.zarr
+      - crop269.zarr
+      - crop270.zarr
+      # - crop271.zarr # adding raw data failed
+      - crop272.zarr
+      - crop273.zarr
+      - crop274.zarr
+      - crop275.zarr
+      - crop276.zarr
+      - crop277.zarr
+      - crop278.zarr
+      - crop279.zarr
+      - crop280.zarr
+      - crop282.zarr
+      - crop289.zarr
+      # - crop293.zarr # adding raw data failed
+      # - crop294.zarr # adding raw data failed
+      # - crop295.zarr # adding raw data failed
+      - crop298.zarr
+      - crop313.zarr
+      - crop319.zarr
+      - crop320.zarr
+      - crop321.zarr
+      - crop322.zarr
+      - crop323.zarr
+      - crop324.zarr
+      - crop325.zarr
+      - crop326.zarr
+      - crop329.zarr
+      - crop336.zarr
+      - crop337.zarr
+      # - crop339.zarr # adding raw data failed
+      # - crop344.zarr # adding raw data failed
+      - crop345.zarr
+      - crop346.zarr
+      - crop347.zarr
+      - crop348.zarr
+      - crop349.zarr
+      - crop351.zarr
+      - crop377.zarr
+      - crop386.zarr
+      - crop407.zarr
+      - crop410.zarr
+      - crop411.zarr
+      - crop412.zarr
+      - crop413.zarr
+      # - crop414.zarr # adding raw data failed
+      # - crop415.zarr # adding raw data failed
+
+  jrc_mus-liver-zon-2:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver-zon-2
+    crops:
+      - crop333.zarr
+      - crop340.zarr
+      - crop341.zarr
+      - crop342.zarr
+      - crop354.zarr
+      - crop355.zarr
+      - crop356.zarr
+      - crop357.zarr
+      # - crop359.zarr # adding raw data failed
+      - crop362.zarr
+      # - crop363.zarr # adding raw data failed
+      # - crop364.zarr # adding raw data failed
+      # - crop365.zarr # adding raw data failed
+      - crop367.zarr
+      - crop368.zarr
+      - crop369.zarr
+      - crop370.zarr
+      - crop376.zarr
+      - crop387.zarr
+      - crop408.zarr
+
+  jrc_zf-cardiac-1:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_zf-cardiac-1
+    crops:
+      # - crop338.zarr  # adding raw data failed
+      - crop378.zarr
+      - crop379.zarr
+      - crop380.zarr
+      - crop381.zarr
+
+  # jrc_22ak351-leaf-2l:
+  #   crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_22ak351-leaf-2l
+  #   crops:
+      # - crop350.zarr # adding raw data failed
+      # - crop383.zarr # adding raw data failed
+      # - crop384.zarr # adding raw data failed
+
+  # jrc_22ak351-leaf-3m:
+  #   crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_22ak351-leaf-3m
+  #   crops:
+      # - crop352.zarr # adding raw data failed
+      # - crop385.zarr # adding raw data failed 
+
+  # jrc_22ak351-leaf-3r:
+  #   crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_22ak351-leaf-3r
+  #   crops:
+  #     - crop361.zarr  # adding raw data failed
+
+  jrc_mus-kidney-glomerulus-2:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-kidney-glomerulus-2
+    crops:
+      - crop421.zarr
+
+  # jrc_mus-pancreas-4:
+  #   crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-pancreas-4
+  #   crops:
+      # - crop422.zarr # adding raw data failed
+      # - crop477.zarr # adding raw data failed
+ 
+  jrc_mus-heart-1:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-heart-1
+    crops:
+    - crop423.zarr
+    - crop452.zarr
+    # - crop478.zarr # adding raw data failed
+
+  jrc_mus-kidney-3:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-kidney-3
+    crops:
+      - crop472.zarr
+      # - crop476.zarr # adding raw data failed
+
+  jrc_mus-liver-3:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver-3
+    crops:
+      - crop473.zarr
+      # - crop475.zarr # adding raw data failed

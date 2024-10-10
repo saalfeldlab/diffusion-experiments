@@ -73,18 +73,20 @@ class ZarrDataConfig(BaseModel):
 
 class CellMapDataset3Das2DConfig(BaseModel):
     data_type: Literal["cellmap3das2d_single"]
-    data_config: str
+    data_path: str
     class_list: Sequence[str]
     scale: Dict[Literal["x", "y", "z"], int]
     augment_horizontal_flip: bool = True
     augment_vertical_flip: bool = True
     allow_single_class_crops: Union[None, Sequence[Union[str, None]]] = None
+    annotation_path: Optional[str] = None
+    crop_list: Optional[Sequence[str]] = None
+    raw_dataset: Optional[str] = None
     dask_workers: int = 0
     pre_load: bool = False
     contrast_adjust: bool = True
     raw_channel: RawChannelOptions = "append"
     label_representation: LabelRepresentation = "binary"
-    label_subgroup: str = "labels"
 
     def get_constructor(self):
         return CellMapDataset3Das2D
@@ -119,13 +121,12 @@ class TrackingConfig(BaseModel):
 
 
 class SampleExporterConfig(BaseModel):
-    channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, ProcessOptionsNames]]]]
+    channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, PostProcessOptionsNames]]]]
     sample_digits: int = 5
     file_format: Literal[".zarr", ".png"] = ".zarr"
     sample_batch_size: int = 1
     colors: Optional[Sequence[Union[Tuple[int, int, int], Sequence[Tuple[float, float, float]]]]] = None
-    threshold: int = 0
-    dir: str = "samples"
+    color_threshold: int = 0
 
     def get_constructor(self):
         return SampleExporter

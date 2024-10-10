@@ -1,0 +1,5 @@
+datasets:
+  jrc_hela-2:
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_hela-2
+    crops:
+      - crop1.zarr
