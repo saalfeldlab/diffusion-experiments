@@ -6,6 +6,7 @@ build-backend = "hatchling.build"
 dependencies = [
   "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git@2f09cf1dd0c4bc4b5b25963c8ba8964a8abea11e",
   "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git@e8c016f504c8324962830a32aa919af15e1c1209",
+  "cellmap-utils-kit@git+ssh://git@github.com/saalfeldlab/cellmap-utils-kit.git@654fb48888fed4a829a0255e5402b94b67e62e1e",
   "mlflow",
   "pydantic",
   "GitPython",

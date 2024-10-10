@@ -1,6 +1,6 @@
 {
   "template": "git@github.com:neptunes5thmoon/cookiecrumbles.git",
-  "commit": "db6089dc8cc4c1f43a45ec9b8062f46538c01748",
+  "commit": "9aac452db3f127860f4f956da220c728f60aa157",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -14,13 +14,16 @@
       "my_repo_deps": {
         "repo": [
           "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git",
-          "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git"
+          "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git",
+          "cellmap-utils-kit@git+ssh://git@github.com/saalfeldlab/cellmap-utils-kit.git"
         ],
         "branch": [
           "mymain",
+          "main",
           "main"
         ],
         "use_latest_commit": [
+          true,
           true,
           true
         ]
