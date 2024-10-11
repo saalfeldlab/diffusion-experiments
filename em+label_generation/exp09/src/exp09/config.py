@@ -16,6 +16,12 @@ from denoising_diffusion_pytorch import (
 from pydantic import BaseModel, Field
 
 
+class DataInfo(BaseModel):
+    contrast: Sequence[Union[int, float]]
+    crop_group: str
+    crops: Sequence[str]
+    raw: Optional[str] = None
+
 class GaussianDiffusionConfig(BaseModel):
     timesteps: int = 1000
     sampling_timesteps: Optional[int] = None
@@ -73,20 +79,18 @@ class ZarrDataConfig(BaseModel):
 
 class CellMapDataset3Das2DConfig(BaseModel):
     data_type: Literal["cellmap3das2d_single"]
-    data_path: str
+    dataname: str
+    datainfo: DataInfo
     class_list: Sequence[str]
     scale: Dict[Literal["x", "y", "z"], int]
     augment_horizontal_flip: bool = True
     augment_vertical_flip: bool = True
-    allow_single_class_crops: Union[None, Sequence[Union[str, None]]] = None
-    annotation_path: Optional[str] = None
-    crop_list: Optional[Sequence[str]] = None
-    raw_dataset: Optional[str] = None
     dask_workers: int = 0
     pre_load: bool = False
     contrast_adjust: bool = True
     raw_channel: RawChannelOptions = "append"
     label_representation: LabelRepresentation = "binary"
+    random_crop: bool = True
 
     def get_constructor(self):
         return CellMapDataset3Das2D
@@ -94,20 +98,17 @@ class CellMapDataset3Das2DConfig(BaseModel):
 
 class CellMapDatasets3Das2DConfig(BaseModel):
     data_type: Literal["cellmap3das2d"]
-    data_paths: Sequence[str]
+    data_config: str
     class_list: Sequence[str]
     scale: Dict[Literal["x", "y", "z"], int]
     augment_horizontal_flip: bool = True
     augment_vertical_flip: bool = True
-    annotation_paths: Union[None, Sequence[Union[str, None]]] = None
-    allow_single_class_crops: Union[None, Sequence[Union[str, None]]] = None
-    crop_lists: Union[None, Sequence[Union[None, Sequence[str]]]] = None
-    raw_datasets: Union[None, Sequence[Union[None, str]]] = None
     dask_workers: int = 0
     pre_load: bool = False
     contrast_adjust: bool = True
     raw_channel: RawChannelOptions = "append"
     label_representation: LabelRepresentation = "binary"
+    random_crop: bool = True
 
     def get_constructor(self):
         return CellMapDatasets3Das2D
