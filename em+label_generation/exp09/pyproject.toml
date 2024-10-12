@@ -4,9 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 dependencies = [
-  "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git@2f09cf1dd0c4bc4b5b25963c8ba8964a8abea11e",
+  "denoising-diffusion-pytorch@git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git@d0a18e927c4eaf2aa4b5208391b1986be054476f",
   "labelcomposer@git+ssh://git@github.com/saalfeldlab/labelcomposer.git@e8c016f504c8324962830a32aa919af15e1c1209",
-  "cellmap-utils-kit@git+ssh://git@github.com/saalfeldlab/cellmap-utils-kit.git@654fb48888fed4a829a0255e5402b94b67e62e1e",
   "mlflow",
   "pydantic",
   "GitPython",
@@ -49,9 +48,6 @@ allow-direct-references = true
 
 [tool.hatch.envs.default]
 dependencies = ["coverage[toml]>=6.5", "pytest"]
-type = "conda"
-command = "mamba"
-conda-forge = true
 
 [tool.hatch.envs.default.scripts]
 test = "pytest {args:tests}"
@@ -63,9 +59,6 @@ cov = ["test-cov", "cov-report"]
 python = ["3.7", "3.8", "3.9", "3.10", "3.11"]
 
 [tool.hatch.envs.lint]
-type = "conda"
-command = "mamba"
-conda-forge = true
 detached = true
 dependencies = ["black>=23.1.0", "mypy>=1.0.0", "ruff>=0.0.243"]
 
