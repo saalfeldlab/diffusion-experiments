@@ -63,7 +63,7 @@ data:
   augment_horizontal_flip: True
   augment_vertical_flip: True
   dask_workers: 88
-  pre_load: False
+  pre_load: True
   contrast_adjust: True
   raw_channel: append
 exporter:
