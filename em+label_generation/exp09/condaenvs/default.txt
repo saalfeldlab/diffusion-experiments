@@ -39,7 +39,7 @@ databricks-sdk==0.34.0
 debugpy==1.8.7
 decorator==5.1.1
 defusedxml==0.7.1
-denoising-diffusion-pytorch @ git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git@f7bf081381d61022e0aa367f6811e17892b860cd
+denoising-diffusion-pytorch @ git+ssh://git@github.com/neptunes5thmoon/denoising-diffusion-pytorch.git@5b9491bbcbc41f030bb139e613e6ef87f8bd4dcb
 Deprecated==1.2.14
 distinctipy==1.3.4
 distributed==2024.9.1
@@ -48,7 +48,7 @@ einops==0.8.0
 ema-pytorch==0.7.0
 eval-type-backport==0.1.3
 executing==2.1.0
--e git+ssh://git@github.com/saalfeldlab/diffusion-experiments.git@d7ecc2746ff6b09d0901e8007a2d908c15638601#egg=exp09&subdirectory=em+label_generation/exp09
+-e git+ssh://git@github.com/saalfeldlab/diffusion-experiments.git@4303c5834a7adc473c87e4eb50d83b8d10d942aa#egg=exp09&subdirectory=em+label_generation/exp09
 fasteners==0.19
 fastjsonschema==2.20.0
 fibsem-tools @ git+ssh://git@github.com/neptunes5thmoon/fibsem-tools.git@efc3384ba8fdd62a128dca30c7701838e12a0189
