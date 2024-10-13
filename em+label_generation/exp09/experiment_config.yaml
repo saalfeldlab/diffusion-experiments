@@ -65,10 +65,10 @@ data:
   dask_workers: 88
   pre_load: False
   contrast_adjust: True
-  raw_channel: APPEND
+  raw_channel: append
 exporter:
-  channel_assignment: {"label": [ [0, 31, 1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, TO_NUMPY, COLORIZE, GRIDDIFY]], "raw": [[31, 32, 1], [ADJUST_RANGE_0_255, TO_UINT8, TO_CPU, GRIDDIFY, TO_NUMPY]]}
-  color_threshold: 10
+  channel_assignment: {"label": [ [0, 31, 1], [ADJUST_RANGE_0_1_TO_0_255, TO_UINT8, TO_CPU, TO_NUMPY, COLORIZE, GRIDDIFY]], "raw": [[31, 32, 1], [ADJUST_RANGE_0_1_TO_0_255, TO_UINT8, TO_CPU, GRIDDIFY, TO_NUMPY]]}
+  threshold: 10
   colors: [ [50,50,50],
             [100,100,100],
             [255,128,0],
