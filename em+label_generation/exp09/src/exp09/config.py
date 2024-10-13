@@ -127,7 +127,7 @@ class SampleExporterConfig(BaseModel):
     file_format: Literal[".zarr", ".png"] = ".zarr"
     sample_batch_size: int = 1
     colors: Optional[Sequence[Union[Tuple[int, int, int], Sequence[Tuple[float, float, float]]]]] = None
-    color_threshold: int = 0
+    threshold: int = 0
 
     def get_constructor(self):
         return SampleExporter
