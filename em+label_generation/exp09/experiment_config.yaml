@@ -107,3 +107,4 @@ tracking:
   experiment_name: em+label_generation
   tracking_uri: file:///nrs/saalfeld/heinrichl/mlflow_tracking/diffusion
   run_name: exp09
+  continue_run_id: 1c27486e289d45ccb46ac4c300c9d084
