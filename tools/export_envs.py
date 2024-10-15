@@ -21,26 +21,25 @@ def get_changed_pyproject_tomls(repo_path="."):
 def regenerate_and_export_default_env(project_dir):
     currdir = os.getcwd()
     os.chdir(project_dir)
-    (project_dir / "condaenvs").mkdir(exist_ok=True)
+    (project_dir / "envs").mkdir(exist_ok=True)
     subprocess.run(["hatch", "env", "prune"], check=True)
     subprocess.run(["hatch", "env", "create"], check=True)
     # env_path = subprocess.run(
     #     ["hatch", "env", "find"], capture_output=True, text=True, check=True
     # ).stdout.strip()
-    env_file = project_dir / "condaenvs" / "default.txt"
-    subprocess.run(
-        ["hatch", "-e", "default", "run", "pip", "freeze", ">", str(env_file)],
-        check=True,
-    )
+    with open(project_dir / "envs" / "default.txt", "w") as env_file:
+        subprocess.run(
+            ["hatch", "-e", "default", "run", "pip", "freeze"],
+            check=True,
+            stdout=env_file,
+        )
     os.chdir(currdir)
 
 
 def check_for_yaml_changes(project_dir, repo_path="."):
     repo = Repo(repo_path)
     yaml_file = str(
-        (project_dir / "condaenvs" / "default.txt").relative_to(
-            Path(repo_path).absolute()
-        )
+        (project_dir / "envs" / "default.txt").relative_to(Path(repo_path).absolute())
     )
     modified = False
     if repo.is_dirty():
@@ -68,7 +67,7 @@ def main():
     for project_dir in changed_dirs:
         if check_for_yaml_changes(project_dir):
             logger.error(
-                "YAML files have changed. Please stage the changes and commit again."
+                "Enironment has changed. Please stage the changes and commit again."
             )
             exit(1)
 
