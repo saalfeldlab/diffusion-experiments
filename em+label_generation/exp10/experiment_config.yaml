@@ -103,7 +103,7 @@ data:
   pre_load: True
   contrast_adjust: True
   raw_channel: append
-  classes: DATASET
+  classes: dataset
 
 exporter:
   channel_assignment: 
