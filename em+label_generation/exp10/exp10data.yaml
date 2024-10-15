@@ -255,7 +255,7 @@ datasets:
     - crop26.zarr
     - crop80.zarr
     - crop81.zarr
-    - crop82.zarr
+    # - crop82.zarr
     - crop83.zarr
     - crop84.zarr
   jrc_sum159-4:
