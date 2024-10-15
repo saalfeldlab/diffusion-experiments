@@ -7,7 +7,7 @@ aiosignal==1.3.1
 alembic==1.13.3
 aniso8601==9.0.1
 annotated-types==0.7.0
-anyio==4.6.0
+anyio==4.6.2
 appdirs==1.4.4
 argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
@@ -32,7 +32,7 @@ click==8.1.7
 cloudpickle==3.1.0
 comm==0.2.2
 contourpy==1.3.0
-coverage==7.6.2
+coverage==7.6.3
 cycler==0.12.1
 dask==2024.9.1
 databricks-sdk==0.34.0
@@ -48,7 +48,7 @@ einops==0.8.0
 ema-pytorch==0.7.0
 eval-type-backport==0.1.3
 executing==2.1.0
--e git+ssh://git@github.com/saalfeldlab/diffusion-experiments.git@4303c5834a7adc473c87e4eb50d83b8d10d942aa#egg=exp09&subdirectory=em+label_generation/exp09
+-e git+ssh://git@github.com/saalfeldlab/diffusion-experiments.git@352b91bfb37d935c44ac9ab4868ee4dca7c8f04f#egg=exp09&subdirectory=em+label_generation/exp09
 fasteners==0.19
 fastjsonschema==2.20.0
 fibsem-tools @ git+ssh://git@github.com/neptunes5thmoon/fibsem-tools.git@efc3384ba8fdd62a128dca30c7701838e12a0189
@@ -64,7 +64,7 @@ gitdb==4.0.11
 GitPython==3.1.43
 google-auth==2.35.0
 graphene==3.3
-graphql-core==3.2.4
+graphql-core==3.2.5
 graphql-relay==3.2.0
 greenlet==3.1.1
 gunicorn==23.0.0
@@ -173,7 +173,7 @@ pydantic-ome-ngff==0.6.0
 pydantic-zarr==0.7.0
 pydantic_core==2.23.4
 Pygments==2.18.0
-pyparsing==3.1.4
+pyparsing==3.2.0
 pytest==8.3.3
 python-dateutil==2.9.0.post0
 python-json-logger==2.0.7
@@ -232,7 +232,7 @@ xarray==2024.9.0
 xarray-datatree==0.0.14
 xarray-multiscale==2.1.0
 xarray-ome-ngff==3.1.1
-yarl==1.15.1
+yarl==1.15.2
 zarr==2.18.3
 zict==3.0.0
 zipp==3.20.2
