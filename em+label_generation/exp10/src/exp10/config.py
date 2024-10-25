@@ -5,14 +5,14 @@ from denoising_diffusion_pytorch import (
     CellMapDatasets3Das2D,
     ClassOptions,
     GaussianDiffusion,
+    LabelRepresentation,
     ProcessOptions,
     ProcessOptionsNames,
+    RawChannelOptions,
     SampleExporter,
     SimpleDataset,
     Unet,
     ZarrDataset,
-    RawChannelOptions,
-    LabelRepresentation
 )
 from pydantic import BaseModel, Field
 
@@ -23,12 +23,15 @@ class DataInfo(BaseModel):
     crops: Sequence[str]
     raw: Optional[str] = None
 
+
 class GaussianDiffusionConfig(BaseModel):
     timesteps: int = 1000
     sampling_timesteps: Optional[int] = None
     objective: str = "pred_v"
     beta_schedule: str = "sigmoid"
-    schedule_fn_kwargs: Optional[Dict[Literal["s", "start", "end", "tau"], Union[float, int]]] = None
+    schedule_fn_kwargs: Optional[
+        Dict[Literal["s", "start", "end", "tau"], Union[float, int]]
+    ] = None
     ddim_sampling_eta: float = 0.0
     auto_normalize: bool = True
     offset_noise_strength: float = 0.0
@@ -131,11 +134,15 @@ class TrackingConfig(BaseModel):
 
 
 class SampleExporterConfig(BaseModel):
-    channel_assignment: Dict[str, Tuple[Tuple[int, int, int], Sequence[Union[None, ProcessOptionsNames]]]]
+    channel_assignment: Dict[
+        str, Tuple[Tuple[int, int, int], Sequence[Union[None, ProcessOptionsNames]]]
+    ]
     sample_digits: int = 5
     file_format: Literal[".zarr", ".png"] = ".zarr"
     sample_batch_size: int = 1
-    colors: Optional[Sequence[Union[Tuple[int, int, int], Sequence[Tuple[float, float, float]]]]] = None
+    colors: Optional[
+        Sequence[Union[Tuple[int, int, int], Sequence[Tuple[float, float, float]]]]
+    ] = None
     threshold: int = 0
 
     def get_constructor(self):
@@ -146,9 +153,12 @@ class ExperimentConfig(BaseModel):
     image_size: int
     architecture: UnetConfig  # turn this into union to add more architectures
     diffusion: GaussianDiffusionConfig  # turn this into union to add more architectures
-    data: Union[SimpleDataConfig, ZarrDataConfig, CellMapDatasets3Das2DConfig, CellMapDataset3Das2DConfig] = Field(
-        ..., discriminator="data_type"
-    )
+    data: Union[
+        SimpleDataConfig,
+        ZarrDataConfig,
+        CellMapDatasets3Das2DConfig,
+        CellMapDataset3Das2DConfig,
+    ] = Field(..., discriminator="data_type")
     training: TrainingConfig
     tracking: TrackingConfig
     exporter: SampleExporterConfig

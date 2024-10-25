@@ -1,16 +1,19 @@
 import os
+import warnings
 from urllib.parse import urlparse, urlunparse
 
 import mlflow
 import yaml
-from denoising_diffusion_pytorch import GaussianDiffusion, Trainer, Unet, CellMapDatasets3Das2D, CellMapDataset3Das2D
-
-from exp10.config import (
-    ExperimentConfig,
-    TrackingConfig,
+from denoising_diffusion_pytorch import (
+    CellMapDataset3Das2D,
+    CellMapDatasets3Das2D,
+    GaussianDiffusion,
+    Trainer,
+    Unet,
 )
+
+from exp10.config import ExperimentConfig, TrackingConfig
 from exp10.utility import flatten_dict, get_repo_and_commit_cwd
-import warnings
 
 warnings.filterwarnings("ignore", module="pydantic_ome_ngff")  # line104
 
@@ -44,7 +47,9 @@ def run():
         mlflow.log_param("commit", commit_hash)
         mlflow.log_params(flatten_dict(config.dict()))
         mlflow.pytorch.autolog()
-        architecture = config.architecture.get_constructor()(**config.architecture.dict())
+        architecture = config.architecture.get_constructor()(
+            **config.architecture.dict()
+        )
 
         diffusion = config.diffusion.get_constructor()(
             architecture, image_size=config.image_size, **config.diffusion.dict()

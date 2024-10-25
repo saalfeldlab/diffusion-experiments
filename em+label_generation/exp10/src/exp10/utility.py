@@ -2,8 +2,8 @@ import logging
 import subprocess
 from typing import Dict, Optional, Tuple
 
-import yaml
 import git
+import yaml
 
 from exp10.config import ExperimentConfig
 
@@ -11,7 +11,9 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-def flatten_dict(nested_dict: Dict, parent_key: str = "", separator: str = ".", max_depth: int = 1) -> Dict:
+def flatten_dict(
+    nested_dict: Dict, parent_key: str = "", separator: str = ".", max_depth: int = 1
+) -> Dict:
     flat_dict = {}
     for key, value in nested_dict.items():
         new_key = f"{parent_key}{separator}{key}" if parent_key else key
