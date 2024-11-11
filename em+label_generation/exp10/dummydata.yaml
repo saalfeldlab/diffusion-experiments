@@ -1,0 +1,120 @@
+datasets:
+  jrc_cos7-1a:
+    contrast:
+    - 65
+    - 193
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_cos7-1a
+    crops:
+    - crop234.zarr
+  jrc_cos7-1b:
+    contrast:
+    - 65
+    - 203
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_cos7-1b
+    crops:
+    - crop235.zarr
+  jrc_ctl-id8-1:
+    contrast:
+    - 45306
+    - 56865
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_ctl-id8-1
+    crops:
+    - crop116.zarr
+  jrc_fly-mb-1a:
+    contrast:
+    - 0
+    - 195
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_fly-mb-1a
+    crops:
+    - crop120.zarr
+  jrc_fly-vnc-1:
+    contrast:
+    - 158
+    - 233
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_fly-vnc-1
+    crops:
+    - crop78.zarr
+  jrc_hela-2:
+    contrast:
+    - 89
+    - 207
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_hela-2
+    crops:
+    - crop1.zarr
+  jrc_hela-3:
+    contrast:
+    - 0
+    - 255
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_hela-3
+    crops:
+    - crop27.zarr
+  jrc_jurkat-1:
+    contrast:
+    - 202
+    - 238
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_jurkat-1
+    crops:
+    - crop35.zarr
+  jrc_macrophage-2:
+    contrast:
+    - 191
+    - 255
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_macrophage-2
+    crops:
+    - crop32.zarr
+  jrc_mus-kidney:
+    contrast:
+    - 0
+    - 215
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-kidney
+    crops:
+    - crop140.zarr
+  jrc_mus-liver:
+    contrast:
+    - 0
+    - 194
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver
+    crops:
+    - crop124.zarr
+  jrc_mus-liver-zon-1:
+    contrast:
+    - 8
+    - 219
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver-zon-1
+    crops:
+    - crop267.zarr
+  jrc_mus-liver-zon-2:
+    contrast:
+    - 0
+    - 205
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver-zon-2
+    crops:
+    - crop333.zarr
+  jrc_mus-pancreas-1:
+    contrast:
+    - 153
+    - 216
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-pancreas-1
+    crops:
+    - crop106.zarr
+  jrc_sum159-1:
+    contrast:
+    - 134
+    - 255
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_sum159-1
+    crops:
+    - crop20.zarr
+  jrc_sum159-4:
+    contrast:
+    - 130
+    - 204
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_sum159-4
+    crops:
+    - crop186.zarr
+  jrc_ut21-1413-003:
+    contrast:
+    - 0
+    - 165
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_ut21-1413-003
+    crops:
+    - crop190.zarr
