@@ -1,0 +1,303 @@
+datasets:
+  jrc_cos7-1a:
+    contrast:
+    - 65
+    - 193
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_cos7-1a
+    crops:
+    - crop234.zarr
+    - crop236.zarr
+    - crop237.zarr
+    - crop239.zarr
+    - crop243.zarr
+    - crop244.zarr
+    - crop248.zarr
+    - crop252.zarr
+    - crop256.zarr
+    - crop292.zarr
+  jrc_cos7-1b:
+    contrast:
+    - 65
+    - 203
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_cos7-1b
+    crops:
+    - crop235.zarr
+    - crop240.zarr
+    - crop241.zarr
+    - crop242.zarr
+    - crop245.zarr
+    - crop249.zarr
+    - crop255.zarr
+    - crop258.zarr
+    - crop259.zarr
+    - crop291.zarr
+  jrc_ctl-id8-1:
+    contrast:
+    - 45306
+    - 56865
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_ctl-id8-1
+    crops:
+    - crop116.zarr
+    - crop117.zarr
+    - crop118.zarr
+    - crop119.zarr
+    - crop130.zarr
+  jrc_fly-mb-1a:
+    contrast:
+    - 0
+    - 195
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_fly-mb-1a
+    crops:
+    - crop120.zarr
+    - crop121.zarr
+    - crop122.zarr
+    - crop123.zarr
+  jrc_fly-vnc-1:
+    contrast:
+    - 158
+    - 233
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_fly-vnc-1
+    crops:
+    - crop78.zarr
+    - crop79.zarr
+    - crop173.zarr
+    - crop174.zarr
+    - crop176.zarr
+    - crop185.zarr
+  jrc_hela-2:
+    contrast:
+    - 89
+    - 207
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_hela-2
+    crops:
+    - crop1.zarr
+    - crop3.zarr
+    - crop4.zarr
+    - crop6.zarr
+    - crop7.zarr
+    - crop16.zarr
+    - crop18.zarr
+    - crop23.zarr
+    - crop28.zarr
+    - crop54.zarr
+    - crop55.zarr
+    - crop56.zarr
+    - crop57.zarr
+    - crop58.zarr
+    - crop59.zarr
+    - crop113.zarr
+    - crop155.zarr
+  jrc_hela-3:
+    contrast:
+    - 0
+    - 255
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_hela-3
+    crops:
+    - crop27.zarr
+    - crop33.zarr
+    - crop34.zarr
+    - crop50.zarr
+    - crop51.zarr
+    - crop60.zarr
+    - crop61.zarr
+    - crop62.zarr
+    - crop63.zarr
+    - crop64.zarr
+    - crop65.zarr
+    - crop101.zarr
+    - crop111.zarr
+    - crop181.zarr
+  jrc_jurkat-1:
+    contrast:
+    - 202
+    - 238
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_jurkat-1
+    crops:
+    - crop35.zarr
+    - crop36.zarr
+    - crop37.zarr
+    - crop38.zarr
+    - crop43.zarr
+    - crop47.zarr
+    - crop66.zarr
+    - crop67.zarr
+    - crop68.zarr
+    - crop69.zarr
+    - crop70.zarr
+    - crop71.zarr
+    - crop107.zarr
+    - crop112.zarr
+    - crop126.zarr
+    - crop180.zarr
+    - crop182.zarr
+  jrc_macrophage-2:
+    contrast:
+    - 191
+    - 255
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_macrophage-2
+    crops:
+    - crop32.zarr
+    - crop39.zarr
+    - crop40.zarr
+    - crop42.zarr
+    - crop48.zarr
+    - crop49.zarr
+    - crop72.zarr
+    - crop73.zarr
+    - crop74.zarr
+    - crop75.zarr
+    - crop76.zarr
+    - crop77.zarr
+    - crop109.zarr
+    - crop110.zarr
+  jrc_mus-kidney:
+    contrast:
+    - 0
+    - 215
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-kidney
+    crops:
+    - crop140.zarr
+    - crop141.zarr
+    - crop147.zarr
+    - crop148.zarr
+    - crop149.zarr
+    - crop156.zarr
+    - crop158.zarr
+    - crop159.zarr
+    - crop160.zarr
+    - crop161.zarr
+    - crop162.zarr
+    - crop164.zarr
+    - crop165.zarr
+    - crop166.zarr
+  jrc_mus-liver:
+    contrast:
+    - 0
+    - 194
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver
+    crops:
+    - crop124.zarr
+    - crop125.zarr
+    - crop131.zarr
+    - crop132.zarr
+    - crop133.zarr
+    - crop135.zarr
+    - crop136.zarr
+    - crop137.zarr
+    - crop138.zarr
+    - crop139.zarr
+    - crop142.zarr
+    - crop143.zarr
+    - crop144.zarr
+    - crop145.zarr
+    - crop150.zarr
+    - crop151.zarr
+    - crop172.zarr
+    - crop175.zarr
+    - crop183.zarr
+    - crop417.zarr
+  jrc_mus-liver-zon-1:
+    contrast:
+    - 8
+    - 219
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver-zon-1
+    crops:
+    - crop267.zarr
+    - crop268.zarr
+    - crop269.zarr
+    - crop270.zarr
+    - crop272.zarr
+    - crop273.zarr
+    - crop274.zarr
+    - crop275.zarr
+    - crop276.zarr
+    - crop277.zarr
+    - crop278.zarr
+    - crop279.zarr
+    - crop280.zarr
+    - crop298.zarr
+    - crop313.zarr
+    - crop321.zarr
+    - crop322.zarr
+    - crop323.zarr
+    - crop325.zarr
+    - crop326.zarr
+    - crop377.zarr
+  jrc_mus-liver-zon-2:
+    contrast:
+    - 0
+    - 205
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-liver-zon-2
+    crops:
+    - crop333.zarr
+    - crop340.zarr
+    - crop341.zarr
+    - crop342.zarr
+    - crop368.zarr
+    - crop369.zarr
+    - crop370.zarr
+    - crop376.zarr
+  jrc_mus-pancreas-1:
+    contrast:
+    - 153
+    - 216
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_mus-pancreas-1
+    crops:
+    - crop106.zarr
+  jrc_sum159-1:
+    contrast:
+    - 134
+    - 255
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_sum159-1
+    crops:
+    - crop20.zarr
+    - crop25.zarr
+    - crop26.zarr
+    - crop80.zarr
+    - crop81.zarr
+    # - crop82.zarr
+    - crop83.zarr
+    - crop84.zarr
+  jrc_sum159-4:
+    contrast:
+    - 130
+    - 204
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_sum159-4
+    crops:
+    - crop186.zarr
+    - crop187.zarr
+    - crop188.zarr
+    - crop189.zarr
+    - crop201.zarr
+    - crop203.zarr
+    - crop206.zarr
+    - crop208.zarr
+    - crop209.zarr
+    - crop210.zarr
+    - crop212.zarr
+    - crop213.zarr
+    - crop216.zarr
+    - crop217.zarr
+    - crop218.zarr
+    - crop219.zarr
+  jrc_ut21-1413-003:
+    contrast:
+    - 0
+    - 165
+    crop_group: /nrs/saalfeld/heinrichl/data/cellmap_labels/zarr_export_092624/jrc_ut21-1413-003
+    crops:
+    - crop190.zarr
+    - crop192.zarr
+    - crop193.zarr
+    - crop195.zarr
+    - crop197.zarr
+    - crop198.zarr
+    - crop199.zarr
+    - crop200.zarr
+    - crop220.zarr
+    - crop222.zarr
+    - crop224.zarr
+    - crop225.zarr
+    - crop226.zarr
+    - crop227.zarr
+    - crop228.zarr
